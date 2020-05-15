@@ -1,0 +1,11 @@
+
+.wrapperSlider{
+
+    max-width: 100vw;
+    height: 100vh;
+    margin-top: 20px;
+}
+.wrapperSlider__slide{
+    width: 100%;
+    height: 70%;
+}

@@ -1,0 +1,17 @@
+.defaultClass{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.defaultClass span{
+    display: inline-block;
+    height: 100%;
+    color: #1f1b11;
+    text-align: center;
+}
+
+.activeClass span{
+    color: #d4111b;
+    font-size: 28px;
+    transition: 0.5s;
+}

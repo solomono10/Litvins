@@ -1,0 +1,133 @@
+.wrapper {
+}
+.header{
+    height:50vh
+}
+.container {
+    background: #363533;
+    display: flex;
+}
+.labelMenu {
+    padding: 0 20px 0 90px;
+    margin: 0 40px 0 0;
+    background: #ed1c27;
+    font-weight: bold;
+    font-size: 22px;
+    color: #534540;
+    position: relative;
+    display: inline-block;
+    line-height: 57px;
+    vertical-align: top;
+    text-transform: uppercase;
+}
+.buttonComponent {
+    padding: 19px 0 18px 0;
+    margin-right: 50px;
+    border: none;
+    background: none;
+    outline: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+.buttonComponent:hover {
+    color: #ed1c27;
+}
+.listPlayers {
+    position: relative;
+    height: max-content;
+}
+.leftPlayer {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    max-height: 757px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
+    -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
+}
+.rightPlayer {
+    position: absolute;
+    text-align: right;
+    right: 0;
+    top: 30px;
+    max-height: 776px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
+    -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
+}
+.containerCenter {
+    position: relative;
+    z-index: 0;
+    margin: 20px 40px 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 420px 420px;
+    grid-template-columns: 310px 310px 310px 310px;
+}
+.modal {
+    background-color: #ffffff;
+}
+.modal_CloseButton {
+    position: relative;
+    top: 12px;
+    left: 656px;
+}
+.fieldInput{
+    display: flex;
+    padding: 10px;
+}
+.fieldInput label{
+    padding-right: 8px;
+}
+.buttons{
+    display: flex;
+
+}
+
+@media screen and (max-width: 1100px) {
+    .header{
+        height: 30vh;
+    }
+.container{
+    flex-wrap: wrap;
+}
+    .labelMenu{
+        padding: 0 20px;
+    }
+    .buttonComponent{
+        padding: 20px 15px;
+        margin: 0;
+    }
+    .containerCenter{
+        grid-template-columns: 345px 345px;
+        align-items: center;
+        justify-items: center;
+        margin: 20px 40px;
+
+    }
+}
+@media screen and (max-width: 700px) {
+    .container{
+        flex-wrap: wrap;
+    }
+    .labelMenu{
+        padding: 0 20px 0 10px;
+        margin: 0 20px 0 0;
+    }
+    .buttons{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .buttonComponent{
+        margin-right: 26px;
+        padding: 20px 0 18px 10px;
+    }
+    .containerCenter{
+        display: block;
+    }
+}

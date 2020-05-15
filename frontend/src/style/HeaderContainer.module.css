@@ -1,0 +1,152 @@
+.headerContainer {
+    height: 100%;
+    width: 100%;
+    background-image: url('./../logo/head-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.breadcrumb {
+    position: absolute;
+    width: 1096px;
+    bottom: 0;
+    height: 50px;
+    left: 10%;
+    background: #d4111b;
+    margin-left: 40px;
+    margin-top: -45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 0;
+}
+
+.headerContainer__title {
+    position: relative;
+    top: 25%;
+    margin-bottom: 40px;
+}
+
+.header {
+    position: relative;
+    top: 50%;
+    margin-bottom: 40px;
+}
+
+.headerContainer__title h1 {
+    font-size: 38px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.breadcrumb::before {
+    content: '';
+    background: #d4111b;
+    transform: skew(-33deg);
+    position: absolute;
+    left: -22px;
+    top: 0;
+    bottom: 0;
+    width: 52px;
+    z-index: -1;
+}
+
+.breadcrumb > div {
+    width: max-content;
+    height: max-content;
+}
+
+.breadcrumb {
+    list-style: none;
+}
+
+.breadcrumb__link a, .breadcrumb__other span {
+    font-size: 14px;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    color: #363533;
+}
+
+.breadcrumb__other {
+}
+
+.breadcrumb__other:before {
+    content: '>';
+    color: #fff;
+    width: 10px;
+    padding: 0 10px;
+    position: relative;
+    top: 2px;
+}
+
+.active {
+    color: #ffffff !important;
+}
+
+.activeLink {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.activeLink span {
+    color: #ffffff !important;
+}
+
+.activeLink:hover span {
+    color: #1f1f1f !important;
+    transition: 0.5s;
+}
+
+.breadcrumb__link a:hover {
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.buttonText {
+
+}
+
+
+/**/
+
+
+.headerContainer__extraInfo {
+    padding: 0 0 0;
+    overflow: hidden;
+    width: 60%;
+    margin: auto;
+    background-image: url("./../logo/match-view-count.jpg");
+    background-size: cover;
+    border-bottom: 3px solid #ed1c27;
+}
+
+.headerContainer__extraInfo
+.wrapper
+.container__singleNextMatch__listItem__aboutMatch
+.container__singleNextMatch__listItem__aboutMatch__info
+.container__singleNextMatch__listItem__aboutMatch__info__teamName {
+    color: #ffffff !important;
+}
+
+@media screen and (max-width: 1100px) {
+   .headerContainer__extraInfo{
+       width: 90%;
+   }
+}
+@media screen and (max-width: 700px) {
+    .breadcrumb {
+        margin-left: 0;
+    }
+    .headerContainer__extraInfo{
+        width: 90%;
+    }
+    .headerContainer__title{
+        top:23%;
+    }
+}

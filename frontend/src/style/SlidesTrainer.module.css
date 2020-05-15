@@ -1,0 +1,43 @@
+.slideContainer {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 70px;
+    left: 100px;
+}
+
+.avatarTrainer {
+    width: 300px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.react-slideshow-container .nav {
+    height: 40px;
+}
+
+
+@media screen and (max-width: 1100px) {
+.slideContainer{
+    left: 50px;
+}
+    .avatarTrainer{
+        width: 500px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .slideContainer {
+       margin: 20px 0;
+        top: 0;
+        left: 130px;
+    }
+    .avatarTrainer{
+        width: 350px;
+    }
+    .react-slideshow-container .nav{
+        display: none;
+    }
+}

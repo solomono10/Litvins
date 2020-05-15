@@ -1,0 +1,47 @@
+.contact_enquiries{
+    width: 30%;
+    min-height: 139px;
+    margin: 0 15px 90px 15px;
+    padding: 30px;
+    background: #f2f2f2;
+}
+.contact_enquiries_title{
+    padding-bottom: 9px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+}
+.contact_enquiries_phone, .contact_enquiries_mail,.contact_enquiries_location{
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Open Sans',sans-serif;
+    color: #787774;
+    text-align: left;
+}
+.contact_enquiries_phone svg, .contact_enquiries_mail svg , .contact_enquiries_location svg{
+    margin: 0 15px 0 0;
+    color: #ed1c27;
+}
+.contact_enquiries_mail a{
+    color: #787774;
+    text-decoration: none;
+}
+.contact_enquiries_mail a:hover{
+    color: #ed1c27;
+    transition: 0.6s;
+}
+
+@media screen and (max-width: 1100px) {
+    .contact_enquiries{
+        margin: 0 15px 40px 15px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .contact_enquiries{
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 15px 40px 15px;
+    }
+}

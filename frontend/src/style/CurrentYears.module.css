@@ -1,0 +1,13 @@
+.defaultClass{
+    height: 100%;
+}
+.defaultClass span{
+    display: inline-block;
+    color: #1f1b11;
+}
+
+.activeClass span{
+    color: #d4111b;
+    font-size: 28px;
+    transition: 0.5s;
+}

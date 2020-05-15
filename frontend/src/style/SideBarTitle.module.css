@@ -1,0 +1,19 @@
+.wrapper__container__SidebarCategories__title{
+    padding: 0 19px 20px 0;
+    color: #ffffff;
+    font-size: 28px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    margin: 0;
+}
+.wrapper__container__SidebarCategories__title:after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #ed1c27;
+    top:  33%;
+    right: -995%;
+    width: 1000%;
+}

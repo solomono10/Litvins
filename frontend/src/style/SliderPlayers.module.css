@@ -1,0 +1,92 @@
+.app {
+    overflow: hidden;
+}
+
+.item {
+    padding: 0 50px;
+}
+
+.img {
+    height: 300px;
+    width: 185px;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.text {
+    font-size: 14px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.wrap {
+    margin-top: 50px;
+}
+
+.btn {
+    position: relative;
+    top: 0;
+    left: 494px;
+    overflow: hidden;
+}
+
+.btnPrev {
+    background-color: #534540;
+    border: none;
+    padding: 10px 24px;
+    color: #ed1c27;
+    transform: skew(-33deg);
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.btnPrev span {
+    transform: skew(33deg);
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.btnNext span {
+    transform: skew(33deg);
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.btnNext {
+    background-color: #ed1c27;
+    border: none;
+    padding: 10px 24px;
+    transform: skew(-33deg);
+}
+
+.btnNext:hover {
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.btnPrev:hover {
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 1100px) {
+    .btn {
+        left: 320px;
+    }
+    .item {
+        padding: 0 40px;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    .item {
+        padding: 0;
+    }
+
+    .btn {
+        left: 116px;
+    }
+}

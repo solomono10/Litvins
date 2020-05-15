@@ -1,0 +1,210 @@
+.container {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 30px !important;
+}
+.wrapper {
+    box-sizing: border-box;
+    max-width: 980px;
+    padding: 0 25px;
+    display: flex;
+    /*justify-content: space-between;*/
+}
+.navbar {
+    background: rgba(0, 0, 0, 0.51);
+    position: fixed;
+    width: 100%;
+    -webkit-transition: 4s all;
+    /*overflow: hidden;*/
+}
+.hidden {
+    background: rgba(0, 0, 0, 0.76);
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    top: 0;
+    -webkit-transition: 4s all;
+    animation-name: fadeInDown;
+    animation-duration: 400ms;
+    /* transform: translate(0.50px);*/
+}
+.logotip img {
+    width: 50px;
+    margin-top: 5px;
+    vertical-align: top;
+    display: inline-block;
+}
+.logotip {
+    padding-right: 80px;
+    position: relative;
+    transition: 400ms all;
+    -webkit-transition: 400ms all;
+    z-index: 3;
+}
+.logotip span {
+    padding-left: 17px;
+    display: inline-block;
+    color: #1f1b11;
+    font-size: 38px;
+    line-height: 70px;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: 400ms all;
+}
+.logotip span em {
+    color: #ffffff;
+    font-style: normal;
+    -webkit-transition: 400ms all;
+    line-height: 70px;
+}
+.logotip::before {
+    content: '';
+    -webkit-transform: skewX(-33deg);
+    background: #d4111b;
+    position: absolute;
+    right: 33px;
+    top: -30px;
+    bottom: -11px;
+    left: -1000%;
+    z-index: -2;
+    -webkit-transition: 4s all;
+    animation-name: logotype;
+}
+.logotip::after {
+    content: '';
+    -webkit-transform: skewX(-33deg);
+    background: #ed1c27;
+    position: absolute;
+    right: 39px;
+    top: 0;
+    bottom: 0;
+    left: -1000%;
+    z-index: -1;
+}
+
+.item {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    float: left;
+    background: none;
+    position: relative;
+    padding: 0 15px;
+
+}
+
+.item > a:before {
+    content: '';
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: #ed1c27;
+    position: absolute;
+    transition: all 400ms;
+    -webkit-transition: all 400ms;
+}
+
+.item > a:hover {
+    color: #ed1c27;
+    transition: 400ms;
+}
+
+.item > a:hover:before {
+    width: 100%;
+}
+
+.item > a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.item .activeLink {
+    color: #ed1c27;
+}
+
+.item .activeLink:before {
+    width: 100%;
+    background: #ed1c27;
+}
+.burgerMenu{
+    display: none;
+}
+.outer{
+
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media screen and (max-width: 1100px) {
+    .burgerMenu{
+        display: block;
+        margin-right: 35px;
+
+    }
+    .item {
+        display: none;
+    }
+    .navbar,.hidden{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 700px) {
+    .wrapper{
+        padding: 0;
+    }
+    .item {
+        display: none;
+    }
+    .hidden{
+        display: none;
+    }
+    .navbar ,.hidden{
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .navbar{
+        height: 100px;
+    }
+    .logotip:before{
+        content: none;
+    }
+    .logotip{
+        display: flex;
+        padding: 20px 80px 10px 20px;
+    }
+    .logotip img{
+        width: 83px;
+        height: 95px;
+
+    }
+    .logotip span em, .logotip span{
+        display: none;
+    }
+    .burgerMenu{
+        display: block;
+    }
+
+}
+

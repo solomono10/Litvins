@@ -1,0 +1,130 @@
+.wrapper{}
+.container__singleNextMatch__listItem {
+    display: flex;
+    flex-direction: column;
+}
+.container__singleNextMatch__listItem__count {
+    margin-bottom: 35px;
+    padding: 12px 0 8px 0;
+    display: block !important;
+    text-align: center;
+    background: #f2f2f2;
+    border: solid #e6e6e6;
+    border-width: 1px 0;
+}
+.container__singleNextMatch__listItem__count__container span {
+    font-size: 20px;
+}
+.count__container__number{
+    color: #1f1f1f;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-right: 7px;
+}
+.count__container__word{
+    color: #a6a6a6;
+    text-transform: uppercase;
+    padding-right: 7px;
+}
+.count__container__separator{
+    color: #ed1c27;
+    padding-right: 7px;
+}
+.container__singleNextMatch__listItem__aboutMatch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container__singleNextMatch__listItem__aboutMatch__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container__singleNextMatch__listItem__aboutMatch__info__logo img{
+    width: 40px;
+    height: 40px;
+    background-color: transparent !important;
+    border: none;
+}
+.container__singleNextMatch__listItem__aboutMatch__info__teamName {
+    padding: 0 16px;
+    font-size: 19px;
+    text-transform: uppercase;
+    color: #363533;
+}
+.container__singleNextMatch__listItem__aboutMatch__info__versus{
+    padding: 0 7px;
+    background: #ed1c27;
+    line-height: 30px;
+    font-size: 16px;
+    color: #363533;
+    text-transform: uppercase;
+}
+.container__singleNextMatch__listItem__aboutMatch__infoDate{
+    padding-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #a6a6a6;
+    font-family: 'Roboto',sans-serif;
+}
+.container__singleNextMatch__listItem__aboutMatch__infoLocation{
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #bababa;
+    font-family: 'Roboto',sans-serif;
+    height: 62px;
+}
+.container__singleNextMatch__listItem__aboutMatch__infoLocation address{
+    font-style: normal;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 1100px) {
+
+
+}
+@media screen and (max-width: 700px) {
+   .container__singleNextMatch__listItem__count__container{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       margin: 0 25px;
+   }
+    .container__singleNextMatch__listItem__aboutMatch__info{
+      flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+
+.listItem{
+
+}
+.count{
+    background: rgba(255, 255, 255, 0.1);
+    /*margin-bottom: 35px;*/
+    margin: 35px 0 ;
+    padding: 12px 0 8px 0;
+    display: block !important;
+    text-align: center;
+}
+.container{
+
+}
+.count .container .count__container__number{
+    color: #ed1c27;
+}
+.count .container .count__container__word{
+    color: #ffffff;
+}
+.count .container .count__container__separator{
+   color: #B5B5B5;
+}
+.teamName, .infoDate, .infoLocation {
+    color: #ffffff;
+}
+.logo{
+
+}
+
