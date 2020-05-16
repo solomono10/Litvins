@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/Litvins/static/css/main.cc921e6a.chunk.css",
-    "main.js": "/Litvins/static/js/main.158fa691.chunk.js",
-    "main.js.map": "/Litvins/static/js/main.158fa691.chunk.js.map",
+    "main.js": "/Litvins/static/js/main.7827b4e6.chunk.js",
+    "main.js.map": "/Litvins/static/js/main.7827b4e6.chunk.js.map",
     "runtime-main.js": "/Litvins/static/js/runtime-main.2813f3d4.js",
     "runtime-main.js.map": "/Litvins/static/js/runtime-main.2813f3d4.js.map",
     "static/css/2.38daee95.chunk.css": "/Litvins/static/css/2.38daee95.chunk.css",
-    "static/js/2.1aabefc3.chunk.js": "/Litvins/static/js/2.1aabefc3.chunk.js",
-    "static/js/2.1aabefc3.chunk.js.map": "/Litvins/static/js/2.1aabefc3.chunk.js.map",
+    "static/js/2.08c024ce.chunk.js": "/Litvins/static/js/2.08c024ce.chunk.js",
+    "static/js/2.08c024ce.chunk.js.map": "/Litvins/static/js/2.08c024ce.chunk.js.map",
     "index.html": "/Litvins/index.html",
-    "precache-manifest.1a811177cc52b53190f52a261fabd23d.js": "/Litvins/precache-manifest.1a811177cc52b53190f52a261fabd23d.js",
+    "precache-manifest.b268df719977b7f7fdedb850b6689411.js": "/Litvins/precache-manifest.b268df719977b7f7fdedb850b6689411.js",
     "service-worker.js": "/Litvins/service-worker.js",
     "static/css/2.38daee95.chunk.css.map": "/Litvins/static/css/2.38daee95.chunk.css.map",
     "static/css/main.cc921e6a.chunk.css.map": "/Litvins/static/css/main.cc921e6a.chunk.css.map",
-    "static/js/2.1aabefc3.chunk.js.LICENSE": "/Litvins/static/js/2.1aabefc3.chunk.js.LICENSE",
+    "static/js/2.08c024ce.chunk.js.LICENSE": "/Litvins/static/js/2.08c024ce.chunk.js.LICENSE",
     "static/media/1449540000_1f7cd1168eb6e41eeed68a1154877d33.jpg": "/Litvins/static/media/1449540000_1f7cd1168eb6e41eeed68a1154877d33.19e45b22.jpg",
     "static/media/1449540000_dfa512708fbc257f1a399dd810d932ed.jpg": "/Litvins/static/media/1449540000_dfa512708fbc257f1a399dd810d932ed.a6667c1a.jpg",
     "static/media/1449540000_e7ee87b9056f7e9171396905dd7c4e90.jpg": "/Litvins/static/media/1449540000_e7ee87b9056f7e9171396905dd7c4e90.f88bc5f8.jpg",
@@ -49,8 +49,8 @@
   "entrypoints": [
     "static/js/runtime-main.2813f3d4.js",
     "static/css/2.38daee95.chunk.css",
-    "static/js/2.1aabefc3.chunk.js",
+    "static/js/2.08c024ce.chunk.js",
     "static/css/main.cc921e6a.chunk.css",
-    "static/js/main.158fa691.chunk.js"
+    "static/js/main.7827b4e6.chunk.js"
   ]
 }
