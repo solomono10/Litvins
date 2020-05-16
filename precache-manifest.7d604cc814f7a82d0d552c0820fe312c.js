@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "33181fbe0d312f9e09dfbc826edeb14e",
+    "revision": "ba8d6346881db4bc83a742f78cfe7b8e",
     "url": "/Litvins/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/css/2.38daee95.chunk.css"
   },
   {
-    "revision": "b0ebd22edceee6e3318a",
-    "url": "/Litvins/static/css/main.a0347b2f.chunk.css"
+    "revision": "f1082acc8ec6da8b1281",
+    "url": "/Litvins/static/css/main.b628afc5.chunk.css"
   },
   {
     "revision": "bc4e1889232fb4e40826",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/2.1aabefc3.chunk.js.LICENSE"
   },
   {
-    "revision": "b0ebd22edceee6e3318a",
-    "url": "/Litvins/static/js/main.51921b3f.chunk.js"
+    "revision": "f1082acc8ec6da8b1281",
+    "url": "/Litvins/static/js/main.254b08a4.chunk.js"
   },
   {
     "revision": "b2c1a113b1c50bfd62e8",
