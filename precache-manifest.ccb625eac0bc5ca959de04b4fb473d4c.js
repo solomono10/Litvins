@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "531383ae2aedc2377e4b029cc39fbd03",
+    "revision": "dc5a5607d207a25e12af063d5bbb4d41",
     "url": "/Litvins/index.html"
   },
   {
-    "revision": "bc4e1889232fb4e40826",
+    "revision": "9386b93eb2586d2f13f6",
     "url": "/Litvins/static/css/2.38daee95.chunk.css"
   },
   {
-    "revision": "a3d6657d9dc3f9d28acf",
+    "revision": "5c129801a09890d1888a",
     "url": "/Litvins/static/css/main.cc921e6a.chunk.css"
   },
   {
-    "revision": "bc4e1889232fb4e40826",
-    "url": "/Litvins/static/js/2.1aabefc3.chunk.js"
+    "revision": "9386b93eb2586d2f13f6",
+    "url": "/Litvins/static/js/2.08c024ce.chunk.js"
   },
   {
     "revision": "0c6fbf142c21e0792c4b5fc62d97024e",
-    "url": "/Litvins/static/js/2.1aabefc3.chunk.js.LICENSE"
+    "url": "/Litvins/static/js/2.08c024ce.chunk.js.LICENSE"
   },
   {
-    "revision": "a3d6657d9dc3f9d28acf",
-    "url": "/Litvins/static/js/main.51921b3f.chunk.js"
+    "revision": "5c129801a09890d1888a",
+    "url": "/Litvins/static/js/main.491a3a22.chunk.js"
   },
   {
     "revision": "b2c1a113b1c50bfd62e8",
