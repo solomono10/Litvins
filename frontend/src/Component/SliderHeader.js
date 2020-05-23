@@ -22,7 +22,7 @@ const SliderHeader = () => {
                     className={style.carouselProvider}>
                     <Slider className={style.sliderWrapper}>
                         {images.map(image => (
-                            <Slide index={image}>
+                            <Slide index={image} key={image}>
                                 <div className={style.container__slider}>
                                     <div className={style.sliderImg} style={{backgroundImage: `url(${image})`}}>
 

@@ -1,12 +1,15 @@
 .wrapper {
 }
-.header{
-    height:50vh
+
+.header {
+    height: 50vh
 }
+
 .container {
     background: #363533;
     display: flex;
 }
+
 .labelMenu {
     padding: 0 20px 0 90px;
     margin: 0 40px 0 0;
@@ -20,6 +23,7 @@
     vertical-align: top;
     text-transform: uppercase;
 }
+
 .buttonComponent {
     padding: 19px 0 18px 0;
     margin-right: 50px;
@@ -32,13 +36,16 @@
     color: #fff;
     text-transform: uppercase;
 }
+
 .buttonComponent:hover {
     color: #ed1c27;
 }
+
 .listPlayers {
     position: relative;
     height: max-content;
 }
+
 .leftPlayer {
     position: absolute;
     left: 0;
@@ -49,6 +56,7 @@
     transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
     -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
 }
+
 .rightPlayer {
     position: absolute;
     text-align: right;
@@ -60,6 +68,7 @@
     transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
     -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
 }
+
 .containerCenter {
     position: relative;
     z-index: 0;
@@ -69,41 +78,54 @@
     grid-template-rows: 420px 420px;
     grid-template-columns: 310px 310px 310px 310px;
 }
+
 .modal {
     background-color: #ffffff;
 }
+
 .modal_CloseButton {
     position: relative;
     top: 12px;
     left: 656px;
 }
-.fieldInput{
+
+.fieldInput {
     display: flex;
     padding: 10px;
 }
-.fieldInput label{
+
+.fieldInput label {
     padding-right: 8px;
 }
-.buttons{
+
+.buttons {
     display: flex;
 
 }
 
+.paginator {
+    margin-bottom: 30px;
+}
+
 @media screen and (max-width: 1100px) {
-    .header{
+    .header {
         height: 30vh;
     }
-.container{
-    flex-wrap: wrap;
-}
-    .labelMenu{
+
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .labelMenu {
         padding: 0 20px;
     }
-    .buttonComponent{
+
+    .buttonComponent {
         padding: 20px 15px;
         margin: 0;
     }
-    .containerCenter{
+
+    .containerCenter {
         grid-template-columns: 345px 345px;
         align-items: center;
         justify-items: center;
@@ -111,23 +133,32 @@
 
     }
 }
+
 @media screen and (max-width: 700px) {
-    .container{
+    .container {
         flex-wrap: wrap;
     }
-    .labelMenu{
+
+    .header {
+        height: 40vh;
+    }
+
+    .labelMenu {
         padding: 0 20px 0 10px;
         margin: 0 20px 0 0;
     }
-    .buttons{
+
+    .buttons {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .buttonComponent{
+
+    .buttonComponent {
         margin-right: 26px;
         padding: 20px 0 18px 10px;
     }
-    .containerCenter{
+
+    .containerCenter {
         display: block;
     }
 }

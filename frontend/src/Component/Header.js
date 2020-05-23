@@ -7,12 +7,12 @@ import HamburgerMenu from 'react-hamburger-menu'
 import MenuContent from "./MenuContent";
 
 const links = [
-    {title: 'Главная', address: "/"},
-    {title: 'Команда', address: "/team"},
-    {title: 'Матчи', address: "/list-matches"},
-    {title: 'Клуб', address: "/club"},
-    {title: 'Новости', address: "/list-news"},
-    {title: 'Контакты', address: "/contact"}
+    {title: 'Главная', address: "/", id:1},
+    {title: 'Команда', address: "/team", id:2},
+    {title: 'Матчи', address: "/list-matches", id:3},
+    {title: 'Клуб', address: "/club", id:4},
+    {title: 'Новости', address: "/list-news", id:5},
+    {title: 'Контакты', address: "/contact", id:6}
 ]
 export default class Header extends React.Component {
     constructor(props) {

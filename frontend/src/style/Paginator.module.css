@@ -1,0 +1,49 @@
+.wrapper__container__wrap__paginator{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapper__container__wrap__paginator > div{
+    margin-right: 20px;
+}
+.wrapper__container__wrap__paginator > div > span{
+    width: 35px;
+    height: 35px;
+    background: #363533;
+    display: inline-block;
+    padding: 0;
+    line-height: 35px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.activePaginator span{
+    background: #ed1c27 !important;
+    color: #363533 !important;
+}
+.paginatorNav span:hover,.paginatorNext a:hover, .paginatorPrev a:hover{
+    background: #ed1c27 !important;
+    color: #363533 !important;
+    transition: 0.5s;
+}
+.paginatorPrev a, .paginatorNext a{
+    display: inline-block;
+    width: 95px;
+    padding: 0;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    background: #363533;
+    border: none;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff !important;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+}
+.paginatorPrev{
+    display: none;
+}

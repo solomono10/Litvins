@@ -84,7 +84,7 @@ export default class InfoPlayer extends React.Component {
                 <div className={styles.sliderContainer}>
                     <h3 className={styles.otherTitle}>Other <span>Players</span></h3>
                     <div className={styles.playerWrap}>
-                        <SliderPlayers/>
+                        {/*<SliderPlayers/>*/}
                     </div>
                 </div>
             </div>

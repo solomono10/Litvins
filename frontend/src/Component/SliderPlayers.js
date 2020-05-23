@@ -3,8 +3,6 @@ import styles from './../style/SliderPlayers.module.css'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
 import 'react-alice-carousel/lib/alice-carousel.css'
-import {players} from "./Team";
-import Player from "./Player";
 
 
 export default class SliderPlayers extends React.PureComponent {
@@ -39,13 +37,13 @@ export default class SliderPlayers extends React.PureComponent {
                     autoPlayInterval={4000}
                     ref={(el)=> (this.Carousel =el)}
                 >
-                    {players.map((player) => {
-                        return (
-                            <div className={styles.item}>
-                                <div className={styles.wrap}><Player player={player}/></div>
-                            </div>
-                        )
-                    })}
+                    {/*{players.map((player) => {*/}
+                    {/*    return (*/}
+                    {/*        <div className={styles.item}>*/}
+                    {/*            <div className={styles.wrap}><Player player={player}/></div>*/}
+                    {/*        </div>*/}
+                    {/*    )*/}
+                    {/*})}*/}
                 </AliceCarousel>
             </div>
         )

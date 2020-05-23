@@ -49,8 +49,8 @@ export default class SliderNextGames extends React.PureComponent {
                 >
                     {games.map((game) => {
                         return (
-                            <div className="item">
-                                <div className={styles.wrap} key={game.id} >
+                            <div className="item" key={game.id}>
+                                <div className={styles.wrap} >
                                     <div className={styles.wrap__container}>
                                         <div className={styles.item__wrap__logo}>
                                             <img src={game.logoFirst} alt=""/>

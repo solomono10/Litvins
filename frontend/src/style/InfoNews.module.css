@@ -65,6 +65,9 @@ width: 100%;
     }
 }
 @media screen and (max-width: 700px) {
+    .header{
+        height: 40vh;
+    }
     .wrapper__container{
         flex-direction: column-reverse;
     }

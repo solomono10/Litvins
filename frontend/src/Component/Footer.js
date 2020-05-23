@@ -68,11 +68,12 @@ export default function Footer() {
                 <footer className={styles.wrapper__footer}>
                     <div className={styles.wrapper__footer__wrap}>
                         <div className={styles.wrapper__footer__wrap__footMenu}>
-                            <NavLink to='#'><span>About</span></NavLink>
-                            <NavLink to='#'><span>Players</span></NavLink>
-                            <NavLink to='#'><span>Match</span></NavLink>
-                            <NavLink to='#'><span>Results</span></NavLink>
-                            <NavLink to='#'><span>News</span></NavLink>
+                            <NavLink exact to="/"><span>Главная</span></NavLink>
+                            <NavLink to="/team"><span>Команда</span></NavLink>
+                            <NavLink to="/list-matches"><span>Матчи</span></NavLink>
+                            <NavLink to="/club"><span>Клуб</span></NavLink>
+                            <NavLink to="/list-news"><span>Новости</span></NavLink>
+                            <NavLink to="contact"><span>Контакты</span></NavLink>
                         </div>
                         <div className={styles.wrapper__footer__wrap__copyrights}>
                             <span>Copyright © 2015 Sportak Team. All Rights Reserved.</span>

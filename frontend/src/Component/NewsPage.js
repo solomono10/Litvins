@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderContainer from "./HeaderContainer";
 import styles from './../style/NewsPage.module.css'
 import NewsContent from "./NewsContent";
-import PaginatorNews from "./PaginatorNews";
+import PaginatorNews from "./Paginator";
 import AsideContainer from "./AsideContainer";
 
 const arrNews = [
@@ -27,8 +27,9 @@ const NewsPage = () => {
                                 return <NewsContent news={news} key={news.id}/>
                             })}
                         </div>
-                        <PaginatorNews/>
-                        <div className={styles.line}></div>
+                        <div className={styles.paginator}>
+                            <PaginatorNews/>
+                        </div>
                     </div>
                 </div>
             </div>

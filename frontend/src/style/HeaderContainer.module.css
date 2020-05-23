@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.breadcrumb {
+.breadcrumb{
     position: absolute;
     width: 1096px;
     bottom: 0;
@@ -142,11 +142,17 @@
 @media screen and (max-width: 700px) {
     .breadcrumb {
         margin-left: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .headerContainer__title{
+        top:21%;
+    }
+    .header{
+        top:50%;
     }
     .headerContainer__extraInfo{
         width: 90%;
     }
-    .headerContainer__title{
-        top:23%;
-    }
+
 }

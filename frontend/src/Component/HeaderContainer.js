@@ -17,7 +17,7 @@ export default function HeaderContainer({title, activeLink, link, childrenLink =
                 : null}
             <div className={styles.breadcrumb}>
                 <div className={styles.breadcrumb__link}>
-                    <NavLink to='/home'>
+                    <NavLink to='/'>
                         <span className={styles.buttonText}>Главная</span>
                     </NavLink>
                 </div>

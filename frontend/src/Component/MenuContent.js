@@ -13,9 +13,11 @@ export default function MenuContent({closeCallback, links}) {
             <div className={styles.menu_links}>
                 {links.map((link) => {
                     return <NavLink exact
+                                    key={link.id}
                                     to={link.address}
                                     activeClassName={styles.activeLink}
-                                    onClick={closeCallback}>
+                                    onClick={closeCallback}
+                                    >
                         {link.title}
                     </NavLink>
                 })}

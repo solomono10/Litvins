@@ -106,5 +106,6 @@
 @media screen and (max-width: 700px) {
     .playerArticle{
         margin-bottom: 15px;
+        width: 280px;
     }
 }
