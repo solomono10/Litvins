@@ -52,6 +52,7 @@ const customStyles = {
 
 export default function Team() {
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [portionNumber, setPortionNumber] = useState(1)
     const dispatch = useDispatch();
     const players = useSelector(state => state.teamPage.players)
     const currentPage = useSelector(state => state.teamPage.currentPage)
@@ -77,6 +78,15 @@ export default function Team() {
     };
     const filterPlayers = (e) =>{
         dispatch(putFilterPlayers(e.currentTarget.title))
+    }
+    const onPageChangedNextPrev = (value) =>{
+        if(value === 'Next'){
+            setPortionNumber(portionNumber+1)
+          dispatch(getPlayers(currentPage+1))
+        }else {
+            setPortionNumber(portionNumber-1)
+            dispatch(getPlayers(currentPage-1))
+        }
     }
     return (
         <div>
@@ -107,7 +117,9 @@ export default function Team() {
                         currentPage={currentPage}
                         pageSize={pageSize}
                         totalPlayersCount={totalPlayersCount}
-                        onPageChanged={onPageChanged} />
+                        onPageChanged={onPageChanged}
+                        onPageChangedNextPrev={onPageChangedNextPrev}
+                        portionNumber={portionNumber}/>
                 </div>
             </div>
 

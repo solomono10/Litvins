@@ -1,20 +1,23 @@
-import React from "react"
+import React, {useState} from "react"
 import styles from "../style/Paginator.module.css";
 import {NavLink} from "react-router-dom";
 import cn from "classnames"
 
 
-export default function Paginator({currentPage, pageSize, totalPlayersCount, onPageChanged}) {
+export default function Paginator({currentPage, pageSize, totalPlayersCount, onPageChanged,onPageChangedNextPrev,portionNumber, portionSize=4}) {
     let pagesCount = Math.ceil(totalPlayersCount / pageSize)
+    let portionCount = Math.ceil(pagesCount / portionSize)
     let pages = []
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
     return (
         <div className={styles.wrapper__container__wrap__paginator}>
-            <div className={styles.paginatorPrev}>
-                <NavLink to='#'>Prev</NavLink>
-            </div>
+            { portionNumber > 1 &&
+                <div className={styles.paginatorPrev}>
+                    <NavLink to='#' onClick={() =>onPageChangedNextPrev('Prev')}>Prev</NavLink>
+                </div>
+            }
             {pages.map((page) => {
                 return (
                     <div key={page}
@@ -26,9 +29,10 @@ export default function Paginator({currentPage, pageSize, totalPlayersCount, onP
                     </div>
                 )
             })}
-            {pages.length === 1 ? null :
+            {pages.length === 1 || portionCount > portionNumber || pages.length === portionNumber  ? null :
+
                 <div className={styles.paginatorNext}>
-                    <NavLink to='#'>Next</NavLink>
+                    <NavLink to='#' onClick={() => onPageChangedNextPrev('Next')}>Next</NavLink>
                 </div>}
 
         </div>

@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useCallback, useEffect} from "react";
 import styles from './../style/InfoPlayer.module.css'
 import HeaderContainer from "./HeaderContainer";
 import avatar from "./../logo/pngtree-users-vector-icon-png-image_3725294.jpg"
 import SliderPlayers from "./SliderPlayers";
+import {useDispatch, useSelector} from "react-redux";
+import {getPlayer, getPlayers} from "../redux/TeamReducer";
 
 const infoForPlayer = [
     {heading: 'POSITION', value: 'Forward'}, {heading: 'Матчи', value: '122'}, {
@@ -16,14 +18,28 @@ const infoForPlayer = [
     }, {heading: 'Вес', value: '72 KG'}
 ]
 
-export default class InfoPlayer extends React.Component {
-    render() {
+export default function InfoPlayer(props) {
+    const dispatch = useDispatch();
+    const player = useSelector(state => state.teamPage.player)
+    const players = useSelector(state => state.teamPage.players)
+    const getInfoPlayer = useCallback(() => {
+        try {
+            dispatch(getPlayer(parseInt(props.match.params.userId)))
+
+        } catch (e) {
+            console.log("Error Server")
+        }
+    })
+    useEffect(() => {
+        getInfoPlayer()
+        dispatch(getPlayers(1, 15))
+    }, [])
+
         return (
             <div>
                 <div className={styles.header}>
-                    <HeaderContainer activeLink={'Команда'} title={'CHRISTOPHER HERRERA'} />
+                    <HeaderContainer activeLink={'Команда'} title={player.name} />
                 </div>
-
                 <div className={styles.emptyContainer}>
                 </div>
                 <div className={styles.containerPlayer}>
@@ -31,14 +47,14 @@ export default class InfoPlayer extends React.Component {
                         <img src={avatar} alt=""/>
                     </div>
                     <div className={styles.number}>
-                        <span>36</span>
+                        <span>{player.numberPlayer}</span>
                     </div>
                     <div className={styles.container}>
-                        <div className={styles.name}><h2>CHRISTOPHER HERRERA</h2></div>
+                        <div className={styles.name}><h2>{player.name}</h2></div>
                         <div className={styles.wrap}>
                             <ul className={styles.info}>
                                 {infoForPlayer.map((el) => {
-                                    return <li><span className={styles.heading}>{el.heading}</span><span
+                                    return <li key={el.value}><span className={styles.heading}>{el.heading}</span><span
                                         className={styles.value}>{el.value}</span></li>
                                 })}
                             </ul>
@@ -80,14 +96,12 @@ export default class InfoPlayer extends React.Component {
                         </ul>
                     </div>
                 </div>
-
                 <div className={styles.sliderContainer}>
                     <h3 className={styles.otherTitle}>Other <span>Players</span></h3>
                     <div className={styles.playerWrap}>
-                        {/*<SliderPlayers/>*/}
+                        <SliderPlayers players={players}/>
                     </div>
                 </div>
             </div>
         )
-    }
 }

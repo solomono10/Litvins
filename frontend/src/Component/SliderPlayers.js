@@ -3,10 +3,16 @@ import styles from './../style/SliderPlayers.module.css'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
 import 'react-alice-carousel/lib/alice-carousel.css'
+import Player from "./Player";
 
 
 export default class SliderPlayers extends React.PureComponent {
-    state = {mouseTrackingEnabled: true, preventEventOnTouchMove: true}
+     constructor(props) {
+         super(props);
+         this.state = {
+             mouseTrackingEnabled: true,
+             preventEventOnTouchMove: true}
+     }
     responsive = {
         100: {items: 1},
         600: {items: 2},
@@ -26,24 +32,23 @@ export default class SliderPlayers extends React.PureComponent {
                     <button className={styles.btnNext} onClick={()=> this.Carousel.slideNext()}><span>Next</span></button>
                 </div>
                 <AliceCarousel
+                    items={this.props.players}
                     preventEventOnTouchMove={preventEventOnTouchMove}
                     mouseTrackingEnabled={mouseTrackingEnabled}
-                    // onSlideChanged={console.debug}
                     responsive={this.responsive}
                     infinite={true}
                     stagePadding={this.stagePadding}
                     buttonsDisabled={true}
-                    // autoPlay={true}
-                    autoPlayInterval={4000}
+                    autoPlayInterval={3000}
                     ref={(el)=> (this.Carousel =el)}
                 >
-                    {/*{players.map((player) => {*/}
-                    {/*    return (*/}
-                    {/*        <div className={styles.item}>*/}
-                    {/*            <div className={styles.wrap}><Player player={player}/></div>*/}
-                    {/*        </div>*/}
-                    {/*    )*/}
-                    {/*})}*/}
+                    {this.props.players.map((player) => {
+                        return (
+                            <div className={styles.item} key={player.id}>
+                                <div className={styles.wrap}><Player player={player}/></div>
+                            </div>
+                        )
+                    })}
                 </AliceCarousel>
             </div>
         )

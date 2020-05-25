@@ -13,5 +13,9 @@ export const teamApi ={
     putFilterPlayers(title){
         return instance.put(`team?filter=${title}`,{})
             .then(res => res.data)
+    },
+    getPlayer(userId){
+       return instance.get(`team/player/`+userId)
+           .then(res => res.data)
     }
 }

@@ -23,7 +23,7 @@ function App() {
             <Suspense fallback={<div style={{height:'100vh',backgroundColor:'#ed1c27'}}>Загрузка...</div>}>
             <Switch>
                 <Route exact path="/" component={HomePage}/>
-                <Route path="/team" component={Team}/>
+                <Route exact path="/team" component={Team}/>
                 <Route path="/team/player/:userId?" component={InfoPlayer}/>
                 <Route path="/list-matches" component={ListMatches}/>
                 <Route path="/matches/:matchId?" component={Match}/>

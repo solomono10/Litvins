@@ -24,36 +24,46 @@ const arrPlayers = [
     {numberPlayer: 46, name: 'Timofey', position: 'Forwards', id: 19},
     {numberPlayer: 46, name: 'Yura', position: 'Defenders', id: 20}]
 
-function getPaginator(req, arr){
-    const currentPage = parseInt(req.query.page)||1;
-    const pageSize = parseInt(req.query.count)||8
+function getPaginator(req, arr) {
+    const currentPage = parseInt(req.query.page) || 1;
+    const pageSize = parseInt(req.query.count) || 8
     const pager = paginate(arr.length, currentPage, pageSize)
-    const pageOfItems = arr.slice(pager.startIndex, pager.endIndex+1);
-    return {pager , pageOfItems}
+    const pageOfItems = arr.slice(pager.startIndex, pager.endIndex + 1);
+    return {pager, pageOfItems}
 }
 
 router.get('/', async (req, res, next) => {
     try {
-        return  res.json(getPaginator(req,arrPlayers));
-    }catch (e) {
+        await res.json(getPaginator(req, arrPlayers));
+    } catch (e) {
         console.log(e)
     }
+    next()
 });
-router.put('/',(req,res) =>{
+router.put('/', async (req, res,next) => {
     try {
-        const filterValue = req.query.filter.toLowerCase() ||'all'
-        if (filterValue === 'all'){
-            return res.json(getPaginator(req,arrPlayers))
-        }else {
-            const filteredArray = arrPlayers.filter((el)=>{
+        const filterValue = req.query.filter.toLowerCase() || 'all'
+        if (filterValue === 'all') {
+            await res.json(getPaginator(req, arrPlayers))
+        } else {
+            const filteredArray = arrPlayers.filter((el) => {
                 return el["position"].toLowerCase().includes(filterValue)
             })
-            return res.json(getPaginator(req,filteredArray))
+            await res.json(getPaginator(req, filteredArray))
         }
-    }catch (e) {
+    } catch (e) {
         console.log(e)
     }
-
+    next()
 })
-
+router.get('/player/:userId', async (req, res, next) => {
+    try {
+        const searchPlayer = parseInt(req.params.userId)
+        const player = arrPlayers.find(player => player.id === searchPlayer)
+        res.json(player)
+    } catch (e) {
+        console.log(e)
+    }
+    next()
+})
 module.exports = router
