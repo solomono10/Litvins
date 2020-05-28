@@ -22,6 +22,7 @@ export default function InfoPlayer(props) {
     const dispatch = useDispatch();
     const player = useSelector(state => state.teamPage.player)
     const players = useSelector(state => state.teamPage.players)
+
     const getInfoPlayer = useCallback(() => {
         try {
             dispatch(getPlayer(parseInt(props.match.params.userId)))
@@ -30,6 +31,7 @@ export default function InfoPlayer(props) {
             console.log("Error Server")
         }
     })
+
     useEffect(() => {
         getInfoPlayer()
         dispatch(getPlayers(1, 15))

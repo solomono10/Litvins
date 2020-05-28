@@ -49,7 +49,7 @@ export default class GalleryPhotosMatch extends React.PureComponent {
                 >
                     {photos.map((photo) => {
                         return (
-                            <div className={styles.item}>
+                            <div className={styles.item} key={photo.id}>
                                 <div className={styles.wrap} style={photo.bgI}></div>
                             </div>
                         )

@@ -19,3 +19,29 @@ export const teamApi ={
            .then(res => res.data)
     }
 }
+export const matchesApi ={
+    getMatches(){
+        return instance.get(`list-matches`)
+            .then(res => res.data)
+    },
+    getMatch(matchId){
+        return instance.get(`list-matches/match/`+ matchId)
+            .then(res => res.data)
+    }
+}
+export const homeApi={
+    getLastMatch(){
+        return instance.get(`/lastMatch`)
+            .then(res => res.data)
+    }
+}
+export const clubApi={
+    getInfoClub(){
+        return instance.get(`/club`)
+            .then(res => res.data)
+    },
+    getInfoYear(id){
+        return instance.get(`/club` +id)
+            .then(res => res.data)
+    }
+}

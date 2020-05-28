@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import HeaderContainer from "./HeaderContainer";
 import styles from './../style/Match.module.css'
 import AsideContainer from "./AsideContainer";
 import SimpleMap from "./SimpleMap";
 import arrangement from './../logo/rI61HzFz5pc.jpg'
 import GalleryPhotosMatch from "./GalleryPhotosMatch";
+import {useDispatch, useSelector} from "react-redux";
+import {getMatch} from "../redux/MatchsReducer";
 
 
-export default function Match() {
-    const [played, setPlayed] = useState(false)
+export default function Match(props) {
+    const dispatch = useDispatch();
+    const match = useSelector(state => state.matchesPage.match)
+    useEffect(() => {
+        dispatch(getMatch(parseInt(props.match.params.matchId)))
+    },[])
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -45,7 +52,7 @@ export default function Match() {
                         </div>
                         <div className={styles.infoMatch_wrap}>
                             {
-                                !played ?
+                                !match.score ?
                                     <div className={styles.article}>
                                         <h3>Match <span>placement</span></h3>
                                         <div className={styles.article_wrap}>

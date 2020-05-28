@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './../style/LatestResult.module.css'
 import clubLogo1 from './../logo/club-logo.png'
 import clubLogo2 from './../logo/club-logo1.png'
 import {NavLink} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {getLastMatch} from "../redux/HomeReducer";
 
 
 export default function LatestResult() {
+    const dispatch = useDispatch()
+    const lastMatch = useSelector(state => state.homePage.lastMatch)
+    useEffect(() => {
+        dispatch(getLastMatch())
+    }, [])
     return (
         <div className={styles.wrapper}>
             <div className={styles.block__center}>
@@ -13,11 +20,11 @@ export default function LatestResult() {
                     <h3>Latest <span>Results</span></h3>
                     <div className={styles.block__center__top__location}>
                         <address>
-                            СШ №180, Радужная 8/3
+                            {lastMatch.location}
                         </address>
                     </div>
                     <div className={styles.block__center__top__data}>
-                        March 29, 2020 | 12:15 pm
+                        {lastMatch.data && lastMatch.data.day} {lastMatch.data && lastMatch.data.month}, 2020 | 12:15 pm
                     </div>
                 </div>
             </div>
@@ -27,24 +34,24 @@ export default function LatestResult() {
                         <img src={clubLogo1} alt=""/>
                     </div>
                     <div className={styles.block__result__center__nameClub}>
-                        <span>Лицвины</span>
+                        <span>{lastMatch.namesClub && lastMatch.namesClub.firstClub}</span>
                     </div>
-                    <div className={styles.block__result__center__score} >
+                    <div className={styles.block__result__center__score}>
                         <div className={styles.block__result__center__score__title}>
                             <span>score</span>
                         </div>
                         <div className={styles.block__result__center__score__table}>
                             <div className={styles.block__result__center__score__table__left}>
-                                <span>3</span>
+                                <span>{lastMatch.scoreValue && lastMatch.scoreValue.firstValue}</span>
                             </div>
                             <div className={styles.block__result__center__score__table__right}>
-                                <span>5</span>
+                                <span>{lastMatch.scoreValue && lastMatch.scoreValue.secondValue}</span>
                             </div>
                             <div className={styles.block__result__center__score__table__clearfix}></div>
                         </div>
                     </div>
                     <div className={styles.block__result__center__nameClub}>
-                        <span>Спутник</span>
+                        <span>{lastMatch.namesClub && lastMatch.namesClub.secondClub}</span>
                     </div>
                     <div className={styles.block__result__center}>
                         <img src={clubLogo2} alt=""/>
@@ -60,7 +67,7 @@ export default function LatestResult() {
                         </span>
                     </div>
                     <div className={styles.block__center__bottom__button}>
-                        <NavLink to='#'><span>More info</span></NavLink>
+                        <NavLink to={`/list-matches/match/`+ lastMatch.id}><span>More info</span></NavLink>
                     </div>
                 </div>
             </div>

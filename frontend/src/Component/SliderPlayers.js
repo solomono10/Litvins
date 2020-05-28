@@ -4,8 +4,6 @@ import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
 import 'react-alice-carousel/lib/alice-carousel.css'
 import Player from "./Player";
-
-
 export default class SliderPlayers extends React.PureComponent {
      constructor(props) {
          super(props);

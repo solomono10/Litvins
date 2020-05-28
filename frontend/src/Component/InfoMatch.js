@@ -6,41 +6,42 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from "react-router-dom";
 
-export default function InfoMatch({score,match}) {
+
+export default function InfoMatch({match}) {
+    console.log(match)
     return (
         <div className={styles.item}>
             <div className={styles.item_info}>
                 <div className={styles.item_data}>
-                    <span>14</span>
-                    <span>Nov</span>
+                    <span>{match.data.day}</span>
+                    <span>{match.data.month}</span>
                 </div>
                 <div className={styles.item_nameAnLogo}>
                     <img src={clubLogo1} alt=""/>
-                    <span>ENGLAND</span>
+                    <span>{match.namesClub.firstClub}</span>
                 </div>
                 <div className={styles.item_separator}>
-                    {score ?
+                    {match.score ?
                         <div className={styles.item_score}>
-                            <span>2</span>
+                            <span>{match.scoreValue.firstValue}</span>
                             <span>:</span>
-                            <span>0</span>
+                            <span>{match.scoreValue.secondValue}</span>
                         </div> :
                         <div className={styles.item_versus}>
                             <span>Vs</span>
                         </div>}
                 </div>
                 <div className={styles.item_nameAnLogo}>
-                    <span>AMSTERDAM</span>
+                    <span>{match.namesClub.secondClub}</span>
                     <img src={clubLogo2} alt=""/>
                 </div>
-
                 <div className={styles.item_location}>
                     <FontAwesomeIcon icon={faMapMarkerAlt}/>
-                    <span>СШ №180 Радужная 8/3</span>
+                    <span>{match.location}</span>
                 </div>
             </div>
             <div className={styles.item_viewWrap}>
-                <NavLink to={`/matches/`+ match.id}>View</NavLink>
+                <NavLink to={`/list-matches/match/`+ match.id}>View</NavLink>
             </div>
         </div>
     )

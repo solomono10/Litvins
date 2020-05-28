@@ -19,8 +19,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.json({extended: true}));
 
-
-app.use('/team' ,cors({origin: 'http://localhost:3000'}),require('./routes/team.routes'));
+app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
+app.use('/team' ,cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
+app.use('/list-matches',cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
+app.use('/club', require('./routes/club.routes'));
 
 
 if (process.env.NOdE_ENV === 'production') {
@@ -31,22 +33,20 @@ if (process.env.NOdE_ENV === 'production') {
     })
 
 }
-
 app.listen(port, (err) => {
     if (err) {
         return console.log('something bad happened', err)
     }
     console.log(`server is listing on ${port}`)
 });
-
 process.on('unhandledRejection', function (reason, p) {
     console.log(reason, p);
 })
 
 
-// app.use('/', require('./routes/home.routes'));
-// app.use('/list-matches', require('./routes/listMatches.routes'));
-// app.use('/club', require('./routes/club.routes'));
+
+
+
 // app.use('/list-news', require('./routes/listNews.routes'));
 // app.use('/contact', require('./routes/contact.routes'));
 

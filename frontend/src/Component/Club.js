@@ -1,52 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './../style/Club.module.css'
 import CurrentYears from "./CurrentYears";
 import SliderAwards from "./SliderAwards";
 import HeaderContainer from "./HeaderContainer";
+import {useDispatch, useSelector} from "react-redux";
+import {getInfoClubPage, getInfoYear} from "../redux/ClubReducer";
 
-const numberYears = [
-    {year: 2016, id: 1, activeClass: true}, {year: 2017, id: 2, activeClass: false}, {
-        year: 2018,
-        id: 3,
-        activeClass: false
-    }, {year: 2019, id: 4, activeClass: false}, {year: 2020, id: 5, activeClass: false}
-]
+
 const tabsarr = [
-    {name: 'Lorem', id: 1, activeClass: true}, {name: 'Ipsum', id: 2, activeClass: false}, {
-        name: 'Dolor',
-        id: 3,
-        activeClass: false
-    }
+    {name: 'Lorem', id: 1, activeClass: true},
+    {name: 'Ipsum', id: 2, activeClass: false},
+    {name: 'Dolor', id: 3, activeClass: false}
 ]
 
-class Club extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            active: false,
-            defaultActive: true,
-            numberYears: numberYears,
-            tabsarr: tabsarr
-        }
+
+export default function Club (){
+    const dispatch =useDispatch()
+    const numberYears = useSelector(state => state.clubPage.infoForClub)
+
+    useEffect(()=>{
+        dispatch(getInfoClubPage())
+
+    },[])
+
+
+    const currentActiveClass = (id) => {
+        dispatch(getInfoYear(id))
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(prevProps, prevState)
-
-    }
-
-    currentActiveClass = (id) => {
-        let newNumberYears = this.state.numberYears.map((el) => {
-            if (el.id === id) {
-                return {...el, activeClass: true}
-            } else {
-                return {...el, activeClass: false}
-            }
-        });
-        this.setState({...this.state, numberYears: newNumberYears})
-    }
-
-    render() {
         return (
             <div className={styles.wrapper}>
                 <div className={styles.header}>
@@ -68,12 +49,14 @@ class Club extends React.Component {
                     </div>
                 </div>
                 <div className={styles.history}>
-                    <div className={styles.historyTitle}><h2>Our <span>History</span></h2></div>
+                    <div className={styles.historyTitle}>
+                        <h2>Our <span>History</span></h2>
+                    </div>
                     <div className={styles.historyTop}>
                         <div>
                             <ul className={styles.historyTimeLine}>
-                                {this.state.numberYears.map((el) => {
-                                    return <CurrentYears el={el} currentActiveClass={this.currentActiveClass}/>
+                                {numberYears && numberYears.map((year) => {
+                                    return <CurrentYears year={year} currentActiveClass={currentActiveClass}/>
                                 })}
                             </ul>
                         </div>
@@ -82,11 +65,6 @@ class Club extends React.Component {
                     <div className={styles.blockMedium}>
                         <div>
                             <h3 className={styles.history_title}>Maecenas <span>Dapibus</span></h3>
-                            <ul className={styles.tabsSwitch}>
-                                {/*{this.state.tabsarr.map((el)=>{*/}
-                                {/*    return <CurrentYears/>*/}
-                                {/*})}*/}
-                            </ul>
                         </div>
                         <div>
                             <h3 className={styles.history_title}>Prasent <span>Dictum</span></h3>
@@ -110,7 +88,4 @@ class Club extends React.Component {
                 </div>
             </div>
         )
-    }
 }
-
-export default Club

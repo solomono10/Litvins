@@ -3,22 +3,11 @@ import styles from "../style/CurrentYears.module.css";
 import cn from 'classnames'
 
 
-class CurrentYears extends React.Component {
-
-    onChangeActive = () => {
-        this.props.currentActiveClass(this.props.el.id)
-    };
-
-    render() {
-        let active = this.props.el.activeClass;
-        return (
-            <li className={cn({[styles.activeClass]:  active === true}, styles.defaultClass)}
-                onClick={this.onChangeActive} >
-                <span>{this.props.el.year}</span>
-            </li>
-        )
-
-    }
+export default function CurrentYears({year, currentActiveClass}) {
+    return (
+        <li className={cn({[styles.activeClass]: year.activeClass === true}, styles.defaultClass)}
+            onClick={()=> currentActiveClass(year.id)}>
+            <span>{year.year}</span>
+        </li>
+    )
 }
-
-export default CurrentYears

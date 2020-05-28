@@ -7,32 +7,10 @@ import Player from "./Player";
 import Button from "./ButtonComponentTeam";
 import Modal from "react-modal";
 import PlayerForm from "./PlayerForm";
-import {useDispatch, useSelector, useStore} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getPlayers, putFilterPlayers} from "../redux/TeamReducer";
 import Paginator from "./Paginator";
 
-// export const players = [
-//     {numberPlayer: 17, name: 'Ivan', position: 'Defenders', id: 1},
-//     {numberPlayer: 18, name: 'Max', position: 'Defenders', id: 2}, {
-//         numberPlayer: 45,
-//         name: 'Pawel',
-//         position: 'Defenders',
-//         id: 3
-//     },
-//     {numberPlayer: 21, name: 'Konstantin', position: 'Midfielders', id: 4},
-//     {numberPlayer: 32, name: 'Mikola', position: 'Midfielders', id: 5}, {
-//         numberPlayer: '02',
-//         name: 'Alexander',
-//         position: 'Forwards',
-//         id: 6
-//     },
-//     {numberPlayer: 89, name: 'Denis', position: 'Forwards', id: 7}, {
-//         numberPlayer: 44,
-//         name: 'Dima',
-//         position: 'Goalkeepers',
-//         id: 8
-//     }
-// ]
 
 const customStyles = {
     content: {
@@ -48,8 +26,6 @@ const customStyles = {
         position: 'relative'
     }
 };
-
-
 export default function Team() {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [portionNumber, setPortionNumber] = useState(1)
@@ -59,19 +35,23 @@ export default function Team() {
     const pageSize = useSelector(state => state.teamPage.pageSize)
     const totalPlayersCount = useSelector(state => state.teamPage.totalPlayersCount)
 
-    const getTeam = useCallback(() => {
-        try {
-            dispatch(getPlayers(currentPage,pageSize))
-        } catch (e) {
-            console.log("Error Server")
-        }
-    })
     const onPageChanged = (pageNumber) =>{
+        setPortionNumber(()=>{
+            let newCurrentPage
+            if(pageNumber>currentPage){
+              newCurrentPage = portionNumber+1
+            }else {
+                newCurrentPage = portionNumber-1
+            }
+            return newCurrentPage
+        })
         dispatch(getPlayers(pageNumber,pageSize))
     }
+
     useEffect(() => {
-        getTeam()
+        dispatch(getPlayers(currentPage,pageSize))
     }, [])
+
     const toggleOpen = () => setIsOpen(!modalIsOpen);
     const submit = (values) => {
         console.log(values)
@@ -80,14 +60,18 @@ export default function Team() {
         dispatch(putFilterPlayers(e.currentTarget.title))
     }
     const onPageChangedNextPrev = (value) =>{
-        if(value === 'Next'){
-            setPortionNumber(portionNumber+1)
-          dispatch(getPlayers(currentPage+1))
-        }else {
-            setPortionNumber(portionNumber-1)
-            dispatch(getPlayers(currentPage-1))
-        }
+        setPortionNumber(()=>{
+            if(value === 'Next'){
+                setPortionNumber(portionNumber+1)
+                dispatch(getPlayers(currentPage+1))
+            }else {
+                setPortionNumber(portionNumber-1)
+                dispatch(getPlayers(currentPage-1))
+            }
+        })
     }
+
+
     return (
         <div>
             <div className={styles.wrapper}>

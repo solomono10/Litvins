@@ -25,7 +25,7 @@ const TeamReducer = (state=initState, action) => {
         case SET_PLAYER: {
             return{
                 ...state,
-                player:{...action.player}
+                player: action.player
             }
         }
         case SET_CURRENT_PAGE: {

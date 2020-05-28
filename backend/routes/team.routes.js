@@ -1,7 +1,7 @@
 const paginate = require('jw-paginate')
-
 const {Router} = require('express');
 const router = Router();
+
 const arrPlayers = [
     {numberPlayer: 17, name: 'Ivan', position: 'Defenders', id: 1},
     {numberPlayer: 18, name: 'Max', position: 'Defenders', id: 2},
@@ -23,7 +23,6 @@ const arrPlayers = [
     {numberPlayer: 46, name: 'Sergey', position: 'Midfielders', id: 18},
     {numberPlayer: 46, name: 'Timofey', position: 'Forwards', id: 19},
     {numberPlayer: 46, name: 'Yura', position: 'Defenders', id: 20}]
-
 function getPaginator(req, arr) {
     const currentPage = parseInt(req.query.page) || 1;
     const pageSize = parseInt(req.query.count) || 8
