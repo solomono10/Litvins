@@ -1,13 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from './../style/Contact.module.css'
 import HeaderContainer from "./HeaderContainer";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPhoneAlt, faEnvelope,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
 import {faVk, faTwitter, faYoutube, faInstagram, faGoogle} from '@fortawesome/free-brands-svg-icons'
 import {NavLink} from "react-router-dom";
 import ContactCell from "./ContactCell";
+import {useDispatch, useSelector} from "react-redux";
+import {getContacts} from "../redux/ContactReducer";
 
 export default function Contact() {
+    const dispatch = useDispatch()
+    const contactsList = useSelector(state => state.contactPage.contacts)
+
+    useEffect(() => {
+        dispatch(getContacts())
+    },[])
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -34,13 +42,13 @@ export default function Contact() {
                             <NavLink to='#'><FontAwesomeIcon icon={faTwitter}/> </NavLink>
                             <NavLink to='#'><FontAwesomeIcon icon={faYoutube}/> </NavLink>
                             <NavLink to='#'><FontAwesomeIcon icon={faInstagram}/> </NavLink>
-                            <NavLink to='#'><FontAwesomeIcon icon={faGoogle}/> </NavLink>
+                            <NavLink to='#'><FontAwesomeIcon icon={faGoogle}/></NavLink>
                         </ul>
                     </div>
                     <div className={styles.contact_cell}>
-                        <ContactCell/>
-                        <ContactCell/>
-                        <ContactCell/>
+                        {contactsList.map((contact) =>{
+                                return <ContactCell contact={contact} key={contact.id} />
+                        })}
                     </div>
                 </div>
             </div>

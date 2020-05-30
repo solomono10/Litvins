@@ -30,8 +30,8 @@ export const matchesApi ={
     }
 }
 export const homeApi={
-    getLastMatch(){
-        return instance.get(`/lastMatch`)
+    getInfoHomePage(){
+        return instance.get(`homeInfo`)
             .then(res => res.data)
     }
 }
@@ -41,7 +41,23 @@ export const clubApi={
             .then(res => res.data)
     },
     getInfoYear(id){
-        return instance.get(`/club` +id)
+        return instance.get(`/club/year/`+id)
+            .then(res => res.data)
+    }
+}
+export const newsApi ={
+    getListNews(currentPage, pageSize){
+        return instance.get(`list-news?page=${currentPage}&count=${pageSize}`)
+            .then(res => res.data)
+    },
+    getNews(newsId){
+        return instance.get(`list-news/news/`+newsId)
+            .then(res => res.data)
+    }
+}
+export const contactApi ={
+    getContacts(){
+        return instance.get(`contact`)
             .then(res => res.data)
     }
 }

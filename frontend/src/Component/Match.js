@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import HeaderContainer from "./HeaderContainer";
 import styles from './../style/Match.module.css'
 import AsideContainer from "./AsideContainer";

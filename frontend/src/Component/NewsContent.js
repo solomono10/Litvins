@@ -7,11 +7,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 export default function NewsContent({news}) {
+
     return (
         <div className={styles.wrapper__container__content__cell}>
             <div className={styles.wrapper__container__content__cell__info}>
                 <div className={styles.wrapper__container__content__cell__info__img}>
-                    <NavLink to={'/news/' + news.id}>
+                    <NavLink to={'/list-news/list/news/' + news.id}>
                         <div style={{backgroundImage: `url(${imgNews})`}}></div>
                     </NavLink>
                 </div>
@@ -21,7 +22,7 @@ export default function NewsContent({news}) {
                     </div>
                     <div className={styles.wrapper__container__content__cell__info__infoText__name}>
                         <h4>
-                            <NavLink to={'/news/' + news.id} >{news.name}</NavLink>
+                            <NavLink to={'/list-news/news/' + news.id} >{news.name}</NavLink>
                         </h4>
                     </div>
                     <div className={styles.wrapper__container__content__cell__info__infoText__text}>
@@ -37,7 +38,7 @@ export default function NewsContent({news}) {
                     <span>3</span>
                 </div>
                 <div  className={styles.wrapper__container__content__cell__bottom__button}>
-                    <NavLink to={'/news/' + news.id}>Read More</NavLink>
+                    <NavLink to={'/list-news/news/' + news.id}>Read More</NavLink>
                 </div>
             </div>
         </div>

@@ -12,29 +12,34 @@ const infoClub = {
     textInfo: '',
 
 }
-
 function addActiveData(data, id = 1) {
-      data.numberYears.map((el) => {
+    let newArr = data.map((el) => {
         if (el.id === id) {
             return {...el, activeClass: true,}
         } else {
             return {...el, activeClass: false}
         }
     });
-    return {data}
+    let infoYear = newArr.find(year =>  year.activeClass === true )
+    infoYear.info = [{},{},{}]
+    return newArr
 }
-
 router.get('/', async (req, res, next) => {
     try {
-debugger
-       let data = addActiveData(infoClub)
-        console.log(data)
-        await res.json(data);
+        let newArr = addActiveData(infoClub.numberYears)
+        await res.json({newArr});
     } catch (e) {
         console.log(e)
     }
     next()
 });
+router.get('/year/:id', async (req, res, next) => {
+    try{
+        let yearId =parseInt(req.params.id)
+        let newArr = addActiveData(infoClub.numberYears,yearId)
+        await res.json({newArr});
+    }catch (e) {
 
-
+    }
+})
 module.exports = router

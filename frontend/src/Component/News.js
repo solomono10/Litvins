@@ -5,6 +5,8 @@ import {NavLink} from "react-router-dom";
 import ArticleContainer from "./ArticleContainer";
 
 export default function News() {
+
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__title}>

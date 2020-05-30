@@ -29,8 +29,8 @@ export default function App() {
                 <Route exact path="/list-matches" component={ListMatches}/>
                 <Route path="/list-matches/match/:matchId?" component={Match}/>
                 <Route path="/club" component={Club}/>
-                <Route path="/list-news" component={NewsPage}/>
-                <Route path="/news/:newsId?" component={InfoNews}/>
+                <Route exact path="/list-news" component={NewsPage}/>
+                <Route path="/list-news/news/:newsId?" component={InfoNews}/>
                 <Route path="/contact" component={Contact}/>
             </Switch>
             </Suspense>

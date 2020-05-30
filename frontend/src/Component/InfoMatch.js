@@ -8,7 +8,6 @@ import {NavLink} from "react-router-dom";
 
 
 export default function InfoMatch({match}) {
-    console.log(match)
     return (
         <div className={styles.item}>
             <div className={styles.item_info}>

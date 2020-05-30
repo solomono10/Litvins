@@ -44,7 +44,7 @@ class SliderAwards extends React.PureComponent {
                     {
                         images.map((el) => {
                             return (
-                                <div className={styles.item}>
+                                <div className={styles.item} key={el}>
                                     <div className={styles.img} style={{backgroundImage: `url(${el})`}}></div>
                                     <h1 className={styles.text}>2014 World Cup Champion</h1>
                                 </div>

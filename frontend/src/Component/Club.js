@@ -1,17 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from './../style/Club.module.css'
 import CurrentYears from "./CurrentYears";
 import SliderAwards from "./SliderAwards";
 import HeaderContainer from "./HeaderContainer";
 import {useDispatch, useSelector} from "react-redux";
 import {getInfoClubPage, getInfoYear} from "../redux/ClubReducer";
-
-
-const tabsarr = [
-    {name: 'Lorem', id: 1, activeClass: true},
-    {name: 'Ipsum', id: 2, activeClass: false},
-    {name: 'Dolor', id: 3, activeClass: false}
-]
 
 
 export default function Club (){
@@ -22,8 +15,6 @@ export default function Club (){
         dispatch(getInfoClubPage())
 
     },[])
-
-
     const currentActiveClass = (id) => {
         dispatch(getInfoYear(id))
     }
@@ -55,8 +46,8 @@ export default function Club (){
                     <div className={styles.historyTop}>
                         <div>
                             <ul className={styles.historyTimeLine}>
-                                {numberYears && numberYears.map((year) => {
-                                    return <CurrentYears year={year} currentActiveClass={currentActiveClass}/>
+                                {numberYears && numberYears.newArr.map((year) => {
+                                    return <CurrentYears key={year.id} year={year} currentActiveClass={currentActiveClass}/>
                                 })}
                             </ul>
                         </div>

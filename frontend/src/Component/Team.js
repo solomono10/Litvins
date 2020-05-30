@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import HeaderContainer from "./HeaderContainer";
 import styles from './../style/Team.module.css'
 import leftImg from './../logo/left-player-bg.png'
@@ -28,30 +28,15 @@ const customStyles = {
 };
 export default function Team() {
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [portionNumber, setPortionNumber] = useState(1)
     const dispatch = useDispatch();
     const players = useSelector(state => state.teamPage.players)
     const currentPage = useSelector(state => state.teamPage.currentPage)
     const pageSize = useSelector(state => state.teamPage.pageSize)
     const totalPlayersCount = useSelector(state => state.teamPage.totalPlayersCount)
 
-    const onPageChanged = (pageNumber) =>{
-        setPortionNumber(()=>{
-            let newCurrentPage
-            if(pageNumber>currentPage){
-              newCurrentPage = portionNumber+1
-            }else {
-                newCurrentPage = portionNumber-1
-            }
-            return newCurrentPage
-        })
-        dispatch(getPlayers(pageNumber,pageSize))
-    }
-
     useEffect(() => {
         dispatch(getPlayers(currentPage,pageSize))
     }, [])
-
     const toggleOpen = () => setIsOpen(!modalIsOpen);
     const submit = (values) => {
         console.log(values)
@@ -59,18 +44,9 @@ export default function Team() {
     const filterPlayers = (e) =>{
         dispatch(putFilterPlayers(e.currentTarget.title))
     }
-    const onPageChangedNextPrev = (value) =>{
-        setPortionNumber(()=>{
-            if(value === 'Next'){
-                setPortionNumber(portionNumber+1)
-                dispatch(getPlayers(currentPage+1))
-            }else {
-                setPortionNumber(portionNumber-1)
-                dispatch(getPlayers(currentPage-1))
-            }
-        })
+    const dispatchMethod = (pageNumber) =>{
+       dispatch(getPlayers(pageNumber,pageSize))
     }
-
 
     return (
         <div>
@@ -101,9 +77,8 @@ export default function Team() {
                         currentPage={currentPage}
                         pageSize={pageSize}
                         totalPlayersCount={totalPlayersCount}
-                        onPageChanged={onPageChanged}
-                        onPageChangedNextPrev={onPageChangedNextPrev}
-                        portionNumber={portionNumber}/>
+                        onDispatchMethod={dispatchMethod}
+                    />
                 </div>
             </div>
 

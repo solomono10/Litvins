@@ -5,23 +5,24 @@ import {faEnvelope, faMapMarkerAlt, faPhoneAlt} from "@fortawesome/free-solid-sv
 import {NavLink} from "react-router-dom";
 
 
-export default function ContactCell({}) {
+
+export default function ContactCell({contact}) {
     return (
         <div className={styles.contact_enquiries}>
             <div className={styles.contact_enquiries_title}>
-                <span>CLUB ENQUIRIES</span>
+                <span>{contact.position}</span>
             </div>
             <div className={styles.contact_enquiries_phone}>
                 <FontAwesomeIcon icon={faPhoneAlt}/>
-                <span>(29)534-53-48</span>
+                <span>{contact.phone}</span>
             </div>
             <div className={styles.contact_enquiries_mail}>
                 <FontAwesomeIcon icon={faEnvelope}/>
-                <NavLink to='#'>support@torbara.com</NavLink>
+                <NavLink to='#'>{contact.mail}</NavLink>
             </div>
             <div className={styles.contact_enquiries_location}>
                 <FontAwesomeIcon icon={faMapMarkerAlt}/>
-                <span>9478 Chestnut Street, Woodstock, GA 30188</span>
+                <span>{contact.address}</span>
             </div>
         </div>
     )

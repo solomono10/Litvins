@@ -1,18 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from './../style/LatestResult.module.css'
 import clubLogo1 from './../logo/club-logo.png'
 import clubLogo2 from './../logo/club-logo1.png'
 import {NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {getLastMatch} from "../redux/HomeReducer";
 
 
-export default function LatestResult() {
-    const dispatch = useDispatch()
-    const lastMatch = useSelector(state => state.homePage.lastMatch)
-    useEffect(() => {
-        dispatch(getLastMatch())
-    }, [])
+export default function LatestResult({lastMatch}) {
     return (
         <div className={styles.wrapper}>
             <div className={styles.block__center}>

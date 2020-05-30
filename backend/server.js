@@ -22,8 +22,9 @@ app.use(express.json({extended: true}));
 app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
 app.use('/team' ,cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
 app.use('/list-matches',cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
-app.use('/club', require('./routes/club.routes'));
-
+app.use('/club', cors({origin: 'http://localhost:3000'}),require('./routes/club.routes'));
+app.use('/list-news',cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
+app.use('/contact',cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
 
 if (process.env.NOdE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
@@ -45,10 +46,6 @@ process.on('unhandledRejection', function (reason, p) {
 
 
 
-
-
-// app.use('/list-news', require('./routes/listNews.routes'));
-// app.use('/contact', require('./routes/contact.routes'));
 
 
 //const http = require('http');

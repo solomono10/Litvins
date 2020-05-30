@@ -1,18 +1,36 @@
-import React from 'react'
+import React, {useCallback, useEffect} from 'react'
 import HeaderContainer from "./HeaderContainer";
 import styles from './../style/InfoNews.module.css'
 import SliderNewsContent from "./SliderNewsContent";
 import SliderListNews from "./SliderListNews";
 import AsideContainer from "./AsideContainer";
+import {useDispatch, useSelector} from "react-redux";
+import {getListNews, getNews} from "../redux/NewsReducer";
 
 
-export default class InfoNews extends React.Component {
-    render() {
+export default function InfoNews(props){
+    const dispatch = useDispatch();
+    const news = useSelector(state => state.newsPage.news)
+    const newsList = useSelector(state => state.newsPage.newsList)
+
+    const getInfoNews = useCallback(() => {
+        try {
+            dispatch(getNews(parseInt(props.match.params.newsId)))
+        } catch (e) {
+            console.log("Error Server")
+        }
+    },[])
+
+    useEffect(() => {
+        getInfoNews()
+        dispatch(getListNews(1, 15))
+    }, [])
+
         return (
             <div className={styles.wrapper}>
                 <div className={styles.header}>
-                    <HeaderContainer title={'ДР Кости'} activeLink={'Новости'} link={'list-news'}
-                                     childrenLink={'ДР Кости'}/>
+                    <HeaderContainer title={news.name} activeLink={'Новости'} link={'list-news'}
+                                     childrenLink={news.name}/>
                 </div>
                 <div className={styles.wrapper__container}>
                     <AsideContainer/>
@@ -44,7 +62,7 @@ export default class InfoNews extends React.Component {
                                 </p>
                             </div>
                             <div className={styles.wrapper__container__content__slider}>
-                                <SliderListNews/>
+                                <SliderListNews newsList={newsList}/>
                             </div>
                             <div className={styles.wrapper__container__content__commentsWrap}>
                                 <div className={styles.wrapper__container__content__commentsWrap__content}>
@@ -63,5 +81,4 @@ export default class InfoNews extends React.Component {
                 </div>
             </div>
         )
-    }
 }

@@ -58,7 +58,7 @@ export default class SliderListNews extends React.PureComponent {
                 >
                     {listNewsArr.map((news) => {
                         return (
-                            <div className={styles.item}>
+                            <div className={styles.item} key={news.id}>
                                 <div className={styles.item__img} style={news.img}></div>
                                 <div className={styles.item__info}>
                                     <div className={styles.item__info__data}>

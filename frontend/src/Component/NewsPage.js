@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import HeaderContainer from "./HeaderContainer";
 import styles from './../style/NewsPage.module.css'
 import NewsContent from "./NewsContent";
 import PaginatorNews from "./Paginator";
 import AsideContainer from "./AsideContainer";
+import {useDispatch, useSelector} from "react-redux";
+import {getListNews} from "../redux/NewsReducer";
 
-const arrNews = [
-    {id: 1, name: 'Тренировка сегодня'},
-    {id: 2, name: 'ДР Кости'}, {id: 3, name: 'Тренирвка во вторник'},
-    {id: 4, name: 'ДР Денис'}, {id: 5, name: 'Тренировка завтра'}
-    , {id: 6, name: 'Игра завершилась со счетом 5/2'}, {id: 7, name: 'Тренировка сегодня'},
-    {id: 8, name: 'Гуляем в бане'}, {id: 9, name: 'Пьем в баре'}]
+export default function NewsPage () {
+    const dispatch =useDispatch()
+    const listNews = useSelector(state => state.newsPage.newsList)
+    const currentPage = useSelector(state => state.newsPage.currentPage)
+    const pageSize = useSelector(state => state.newsPage.pageSize)
+    const totalPlayersCount = useSelector(state => state.newsPage.totalPlayersCount)
 
-const NewsPage = () => {
+    const getAllNews = () =>{
+        dispatch(getListNews(1,9))
+    }
+    useEffect(()=>{
+        getAllNews()
+    },[])
+    const dispatchMethod = (pageNumber) =>{
+        dispatch(getListNews(pageNumber,pageSize))
+    }
+
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -23,12 +35,17 @@ const NewsPage = () => {
                     <AsideContainer/>
                     <div className={styles.wrapper__container__wrap__info}>
                         <div className={styles.wrapper__container__content}>
-                            {arrNews.map(news => {
+                            {listNews.map(news => {
                                 return <NewsContent news={news} key={news.id}/>
                             })}
                         </div>
                         <div className={styles.paginator}>
-                            <PaginatorNews/>
+                            <PaginatorNews
+                                currentPage={currentPage}
+                                pageSize={pageSize}
+                                totalPlayersCount={totalPlayersCount}
+                                onDispatchMethod={dispatchMethod}
+                            />
                         </div>
                     </div>
                 </div>
@@ -36,5 +53,3 @@ const NewsPage = () => {
         </div>
     )
 }
-
-export default NewsPage
