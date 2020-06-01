@@ -154,16 +154,15 @@ router.get('/homeInfo', async (req, res, next) => {
                 ' постоянных тренировок, поддержания физической формы на самом высоком уровне.' ,trainers:[{img1: 'img1',id:1},{img2:'img2',id:2}]}
         //statistics
         let statisticsPlayers = [
-            {name:'Бомбардиры', listPlayers:[{name:'Данцевич Иван',count:25},{name:'Cиницкий Денис',count:20},{name:'Стригуцкий Дмитрий',count:15}]},
-            {name:'Ассисты', listPlayers:[{name:'Данцевич Иван',count:20},{name:'Cиницкий Денис',count:18},{name:'Стригуцкий Дмитрий',count:15}]},
-            {name:'Лучшие игроки', listPlayers:[{name:'Данцевич Иван',count:5},{name:'Cиницкий Денис',count:15},{name:'Стригуцкий Дмитрий',count:14}]}]
+            {name:'Бомбардиры', listPlayers:[{name:'Данцевич Иван',count:25, id:1},{name:'Cиницкий Денис',count:20,id:2},{name:'Стригуцкий Дмитрий',count:15,id:3}],id:1},
+            {name:'Ассисты', listPlayers:[{name:'Данцевич Иван',count:20,id:1},{name:'Cиницкий Денис',count:18,id:2},{name:'Стригуцкий Дмитрий',count:15,id:3}],id:2},
+            {name:'Лучшие игроки', listPlayers:[{name:'Данцевич Иван',count:5,id:1},{name:'Cиницкий Денис',count:3,id:2},{name:'Стригуцкий Дмитрий',count:2,id:3}],id:3}]
         //next Match and list Matches score = false
         let {nextMatch, listMatches} = searchNextMatch(arrListGames)
         // last news
         let newsList = getPaginator(arrNews, 1,2)
         //All info
         let data = {searchLastMatchValue,infoAboutClub,statisticsPlayers,nextMatch,listMatches,newsList}
-        console.log(data)
         await res.json(data);
     } catch (e) {
         console.log(e)

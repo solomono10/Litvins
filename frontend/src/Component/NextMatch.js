@@ -1,29 +1,31 @@
 import React from 'react';
 import styles from './../style/NextMatch.module.css'
+import clubLogo1 from './../logo/club-logo.png'
+import clubLogo2 from './../logo/club-logo1.png'
 
 
 
-export default function NextMatch ({data,firstLogo, secondLogo, firstTeamName,secondTeamName}){
+export default function NextMatch ({match}){
     return(
         <div className={styles.wrapper}>
             <div className={styles.item__data}>
-                <span>{data}</span>
+                <span>{match.data.day} {match.data.month} 2020</span>
             </div>
             <div className={styles.item__wrapper}>
                     <div className={styles.item__wrapper__logo}>
-                        <img src={firstLogo} alt=""/>
+                        <img src={clubLogo1} alt=""/>
                     </div>
                     <div className={styles.item__wrapper__teamName}>
-                        <span>{firstTeamName}</span>
+                        <span>{match.namesClub.firstClub}</span>
                     </div>
                     <div className={styles.item__wrapper__versus}>
                         <span>Vs</span>
                     </div>
                     <div className={styles.item__wrapper__teamName}>
-                        <span>{secondTeamName}</span>
+                        <span>{match.namesClub.secondClub}</span>
                     </div>
                     <div className={styles.item__wrapper__logo}>
-                        <img src={secondLogo} alt=""/>
+                        <img src={clubLogo2} alt=""/>
                     </div>
             </div>
         </div>

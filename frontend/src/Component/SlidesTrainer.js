@@ -13,7 +13,7 @@ const  zoomInProperties = {
     indicators: true,
     scale: 1.4
 }
-export default function SlidesTrainer() {
+export default function SlidesTrainer({trainers}) {
     return(
         <div className={style.slideContainer}>
             <Zoom {... zoomInProperties}>

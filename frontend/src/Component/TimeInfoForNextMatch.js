@@ -5,7 +5,7 @@ import clubLogo2 from "../logo/club-logo1.png";
 import cn from 'classnames'
 
 
-export default function TimeInfoForNextMatch({match, header}) {
+export default function TimeInfoForNextMatch({nextMatch, header}) {
     return (
     <div className={styles.wrapper}>
         <div className={cn({[styles.listItem]:header},styles.container__singleNextMatch__listItem)}>
@@ -25,30 +25,29 @@ export default function TimeInfoForNextMatch({match, header}) {
                 </div>
             </div>
         </div>
-
         <div className={styles.container__singleNextMatch__listItem__aboutMatch}>
             <div className={styles.container__singleNextMatch__listItem__aboutMatch__info}>
                 <div className={cn({[styles.logo]:header},styles.container__singleNextMatch__listItem__aboutMatch__info__logo)}>
                     <img src={clubLogo1} alt=""/>
                 </div>
                 <div className={cn({[styles.teamName]:header},styles.container__singleNextMatch__listItem__aboutMatch__info__teamName)}>
-                    <span>England</span>
+                    <span>{nextMatch.namesClub && nextMatch.namesClub.firstClub}</span>
                 </div>
                 <div className={styles.container__singleNextMatch__listItem__aboutMatch__info__versus}>
                     <span>Vs</span>
                 </div>
                 <div className={cn({[styles.teamName]:header},styles.container__singleNextMatch__listItem__aboutMatch__info__teamName)}>
-                    <span>Amsterdam</span>
+                    <span>{nextMatch.namesClub && nextMatch.namesClub.secondClub}</span>
                 </div>
                 <div className={cn({[styles.logo]:header},styles.container__singleNextMatch__listItem__aboutMatch__info__logo)}>
                     <img src={clubLogo2} alt=""/>
                 </div>
             </div>
             <div className={cn({[styles.infoDate]:header},styles.container__singleNextMatch__listItem__aboutMatch__infoDate)}>
-                <span>March 29, 2020 | 12.15 am</span>
+                <span>{nextMatch.data && nextMatch.data.month} {nextMatch.data && nextMatch.data.day}, 2020 | 12.15 am</span>
             </div>
             <div className={cn({[styles.infoLocation]:header},styles.container__singleNextMatch__listItem__aboutMatch__infoLocation)}>
-                <address>СШ №180 Радужная 8/3</address>
+                <address>{nextMatch.location}</address>
             </div>
         </div>
     </div>

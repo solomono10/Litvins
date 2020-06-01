@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './../style/news.module.css';
-import img1 from './../logo/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg';
 import {NavLink} from "react-router-dom";
 import ArticleContainer from "./ArticleContainer";
 
-export default function News() {
-
-
+export default function News({newsList}) {
+    console.log(newsList)
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__title}>
@@ -20,11 +18,14 @@ export default function News() {
             </div>
             <div className={styles.wrapper__container}>
                 <div className={styles.wrapper__container__center}>
-                    <ArticleContainer/>
-                    <ArticleContainer/>
+                    {
+                        newsList.map((news)=>{
+                            return <ArticleContainer news={news} key={news.id}/>
+                        })
+                    }
                 </div>
                 <div className={styles.wrapper__container_allNewsBtn}>
-                    <NavLink to='/news'><span>All News</span></NavLink>
+                    <NavLink to='/list-news'><span>All News</span></NavLink>
                 </div>
             </div>
         </div>
