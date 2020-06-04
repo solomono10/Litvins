@@ -15,7 +15,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 })
-app.use(bodyParser.urlencoded({extended: false}));
+const urlencodedParser = bodyParser.urlencoded({extended: false})
+// app.use();
 app.use(bodyParser.json());
 app.use(express.json({extended: true}));
 
@@ -25,6 +26,8 @@ app.use('/list-matches',cors({origin: 'http://localhost:3000'}), require('./rout
 app.use('/club', cors({origin: 'http://localhost:3000'}),require('./routes/club.routes'));
 app.use('/list-news',cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
 app.use('/contact',cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
+app.use('/auth',urlencodedParser,cors({origin: 'http://localhost:3000'}), require('./routes/auth.router'));
+
 
 if (process.env.NOdE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))

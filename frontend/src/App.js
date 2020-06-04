@@ -1,19 +1,23 @@
 import React, {Suspense} from 'react';
 import {Route, Switch} from "react-router-dom";
-import Header from "./Component/Header";
-import Footer from "./Component/Footer";
+import Header from "./Component/MainComponent/Header";
+import Footer from "./Component/MainComponent/Footer";
 import ScrollToTop from "./Component/ScrollToTop";
 import './App.css';
 
-const HomePage = React.lazy(() => import('./Component/HomePage'));
-const Team = React.lazy(() => import('./Component/Team'));
+const HomePage = React.lazy(() => import('./Component/MainComponent/HomePage'));
+const Team = React.lazy(() => import('./Component/MainComponent/Team'));
 const InfoPlayer = React.lazy(() => import('./Component/InfoPlayers'));
 const ListMatches = React.lazy(() => import('./Component/ListMatches'));
-const Match = React.lazy(() => import('./Component/Match'));
-const Club = React.lazy(() => import('./Component/Club'));
-const NewsPage = React.lazy(() => import('./Component/NewsPage'));
-const InfoNews = React.lazy(() => import('./Component/InfoNews'));
-const Contact = React.lazy(() => import('./Component/Contact'));
+const Match = React.lazy(() => import('./Component/MainComponent/Match'));
+const Club = React.lazy(() => import('./Component/MainComponent/Club'));
+const NewsPage = React.lazy(() => import('./Component/MainComponent/NewsPage'));
+const InfoNews = React.lazy(() => import('./Component/MainComponent/InfoNews'));
+const Contact = React.lazy(() => import('./Component/MainComponent/Contact'));
+const Login = React.lazy(() => import('./Component/MainComponent/Login'));
+const Logout = React.lazy(() => import('./Component/MainComponent/LogOut'));
+const Registration = React.lazy(() => import('./Component/MainComponent/Registration'));
+
 
 
 export default function App() {
@@ -32,6 +36,9 @@ export default function App() {
                 <Route exact path="/list-news" component={NewsPage}/>
                 <Route path="/list-news/news/:newsId?" component={InfoNews}/>
                 <Route path="/contact" component={Contact}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/logout" component={Logout}/>
+                <Route path="/registration" component={Registration}/>
             </Switch>
             </Suspense>
             <Footer/>

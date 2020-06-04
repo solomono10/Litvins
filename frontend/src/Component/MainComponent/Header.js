@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from '../logo/Litvin-LOGO.png';
-import style from './../style/Header.module.css'
+import logo from '../../logo/Litvin-LOGO.png';
+import style from '../../style/Header.module.css'
 import {NavLink} from "react-router-dom";
 import CheeseburgerMenu from "cheeseburger-menu";
 import HamburgerMenu from 'react-hamburger-menu'
-import MenuContent from "./MenuContent";
+import MenuContent from "../MenuContent";
 
 const links = [
     {title: 'Главная', address: "/", id:1},

@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './../style/Statistics.module.css'
-import StatisticsPlayer from "./StatisticsPlayer";
-import StatisticsTitleIcon from "./StatisticsTitleIcon";
+import style from '../../style/Statistics.module.css'
+import StatisticsPlayer from "../StatisticsPlayer";
+import StatisticsTitleIcon from "../StatisticsTitleIcon";
 
 
 export default function Statistics({statisticsPlayers}) {

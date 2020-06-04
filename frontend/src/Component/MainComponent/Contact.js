@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
-import styles from './../style/Contact.module.css'
-import HeaderContainer from "./HeaderContainer";
+import styles from '../../style/Contact.module.css'
+import HeaderContainer from "../HeaderContainer";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faVk, faTwitter, faYoutube, faInstagram, faGoogle} from '@fortawesome/free-brands-svg-icons'
 import {NavLink} from "react-router-dom";
-import ContactCell from "./ContactCell";
+import ContactCell from "../ContactCell";
 import {useDispatch, useSelector} from "react-redux";
-import {getContacts} from "../redux/ContactReducer";
+import {getContacts} from "../../redux/ContactReducer";
 
 export default function Contact() {
     const dispatch = useDispatch()

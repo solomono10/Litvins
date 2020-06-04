@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from "../style/SliderNewsContent.module.css";
+import styles from "../../style/SliderNewsContent.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleLeft, faAngleRight ,faCalendarAlt,faUser, faListUl} from "@fortawesome/free-solid-svg-icons";
 import AliceCarousel from "react-alice-carousel";
-import newsImg1 from "../logo/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg";
-import newsImg2 from "../logo/5276.jpg";
-import newsImg3 from "../logo/Best-Football-Score-Apps-for-Android-feature-image.jpg";
+import newsImg1 from "../../logo/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg";
+import newsImg2 from "../../logo/5276.jpg";
+import newsImg3 from "../../logo/Best-Football-Score-Apps-for-Android-feature-image.jpg";
 
 export const newsArr = [
     {img:{backgroundImage:`url(${newsImg1})`}, id:1, data: 'March 25, 2020', user:'Guest',categories:'Life'},

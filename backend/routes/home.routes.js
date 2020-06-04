@@ -126,6 +126,8 @@ const arrNews = [
     {id: 17, name: 'Гуляем в бане'},
     {id: 18, name: 'Пьем в баре'}
 ]
+
+
 function searchLastMatch(match){
   return match.score === true
 }
@@ -142,6 +144,7 @@ function getPaginator(arr,currentPage, pageSize) {
     const pageOfItems = arr.slice(pager.startIndex, pager.endIndex + 1);
     return {pager, pageOfItems}
 }
+
 
 router.get('/homeInfo', async (req, res, next) => {
     try {

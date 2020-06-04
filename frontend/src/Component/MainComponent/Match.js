@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
-import HeaderContainer from "./HeaderContainer";
-import styles from './../style/Match.module.css'
+import HeaderContainer from "../HeaderContainer";
+import styles from '../../style/Match.module.css'
 import AsideContainer from "./AsideContainer";
-import SimpleMap from "./SimpleMap";
-import arrangement from './../logo/rI61HzFz5pc.jpg'
-import GalleryPhotosMatch from "./GalleryPhotosMatch";
+import SimpleMap from "../SimpleMap";
+import arrangement from '../../logo/rI61HzFz5pc.jpg'
+import GalleryPhotosMatch from "../GalleryPhotosMatch";
 import {useDispatch, useSelector} from "react-redux";
-import {getMatch} from "../redux/MatchsReducer";
+import {getMatch} from "../../redux/MatchsReducer";
 
 
 export default function Match(props) {

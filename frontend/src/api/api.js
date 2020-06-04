@@ -61,3 +61,12 @@ export const contactApi ={
             .then(res => res.data)
     }
 }
+
+export const authAPI = {
+    login(login, password) {
+        return instance.post(`auth/login`, {login, password})
+    },
+    registration(data){
+        return instance.post(`auth/registration`,{data})
+    }
+};

@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./../style/Footer.module.css"
+import styles from "../../style/Footer.module.css"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faVk, faTwitter, faYoutube, faInstagram, faGoogle} from '@fortawesome/free-brands-svg-icons'
 import {Link, NavLink} from "react-router-dom";
-import clubLogo1 from './../logo/club-logo.png'
-import clubLogo2 from './../logo/club-logo1.png'
-import SliderNextGames from "./SliderNextGames";
+import clubLogo1 from '../../logo/club-logo.png'
+import clubLogo2 from '../../logo/club-logo1.png'
+import SliderNextGames from "../Sliders/SliderNextGames";
 
 export const games = [
     {nameFirst: 'China', nameSecond: 'England', logoFirst: clubLogo1, logoSecond: clubLogo2, id: 1},

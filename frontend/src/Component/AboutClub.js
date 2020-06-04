@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './../style/AboutClub.module.css'
-import SlidesTrainer from "./SlidesTrainer";
+import SlidesTrainer from "./Sliders/SlidesTrainer";
 import {NavLink} from "react-router-dom";
 
 export default function AboutClub ({infoAboutClub}){

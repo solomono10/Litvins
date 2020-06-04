@@ -1,12 +1,12 @@
 import React from 'react'
-import styles from "../style/AsideContainer.module.css";
+import styles from "../../style/AsideContainer.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import {faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
 import {NavLink} from "react-router-dom";
-import SideBarTitle from "./SideBarTitle";
-import SideBarWrap from "./SideBarWrap";
-import TagComponent from "./TagComponent";
+import SideBarTitle from "../SideBarTitle";
+import SideBarWrap from "../SideBarWrap";
+import TagComponent from "../TagComponent";
 
 
 export default function AsideContainer() {

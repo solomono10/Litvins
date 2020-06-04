@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './../style/SliderListNews.module.css'
+import styles from '../../style/SliderListNews.module.css'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
 import 'react-alice-carousel/lib/alice-carousel.css'
-import newsImg1 from "../logo/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg";
-import newsImg2 from "../logo/5276.jpg";
-import newsImg3 from "../logo/Best-Football-Score-Apps-for-Android-feature-image.jpg";
+import newsImg1 from "../../logo/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg";
+import newsImg2 from "../../logo/5276.jpg";
+import newsImg3 from "../../logo/Best-Football-Score-Apps-for-Android-feature-image.jpg";
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";

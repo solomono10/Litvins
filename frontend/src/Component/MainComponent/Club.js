@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import styles from './../style/Club.module.css'
-import CurrentYears from "./CurrentYears";
-import SliderAwards from "./SliderAwards";
-import HeaderContainer from "./HeaderContainer";
+import styles from '../../style/Club.module.css'
+import CurrentYears from "../CurrentYears";
+import SliderAwards from "../Sliders/SliderAwards";
+import HeaderContainer from "../HeaderContainer";
 import {useDispatch, useSelector} from "react-redux";
-import {getInfoClubPage, getInfoYear} from "../redux/ClubReducer";
+import {getInfoClubPage, getInfoYear} from "../../redux/ClubReducer";
 
 
 export default function Club (){

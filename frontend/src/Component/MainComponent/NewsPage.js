@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import HeaderContainer from "./HeaderContainer";
-import styles from './../style/NewsPage.module.css'
-import NewsContent from "./NewsContent";
-import PaginatorNews from "./Paginator";
+import HeaderContainer from "../HeaderContainer";
+import styles from '../../style/NewsPage.module.css'
+import NewsContent from "../NewsContent";
+import PaginatorNews from "../Paginator";
 import AsideContainer from "./AsideContainer";
 import {useDispatch, useSelector} from "react-redux";
-import {getListNews} from "../redux/NewsReducer";
+import {getListNews} from "../../redux/NewsReducer";
 
 export default function NewsPage () {
     const dispatch =useDispatch()

@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
-import SliderHeader from "./SliderHeader";
-import AboutClub from "./AboutClub";
-import LatestResult from "./LatestResult";
-import NextMatches from "./NextMatchs";
-import News from "./News";
+import SliderHeader from "../Sliders/SliderHeader";
+import AboutClub from "../AboutClub";
+import LatestResult from "../LatestResult";
+import NextMatches from "../NextMatchs";
+import News from "../News";
 import Statistics from "./Statistics";
 import {useDispatch, useSelector} from "react-redux";
-import {getInfoHomePage} from "../redux/HomeReducer";
+import {getInfoHomePage} from "../../redux/HomeReducer";
 
 
 export default function HomePage(){

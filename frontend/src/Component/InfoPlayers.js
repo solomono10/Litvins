@@ -2,7 +2,7 @@ import React, {useCallback, useEffect} from "react";
 import styles from './../style/InfoPlayer.module.css'
 import HeaderContainer from "./HeaderContainer";
 import avatar from "./../logo/pngtree-users-vector-icon-png-image_3725294.jpg"
-import SliderPlayers from "./SliderPlayers";
+import SliderPlayers from "./Sliders/SliderPlayers";
 import {useDispatch, useSelector} from "react-redux";
 import {getPlayer, getPlayers} from "../redux/TeamReducer";
 

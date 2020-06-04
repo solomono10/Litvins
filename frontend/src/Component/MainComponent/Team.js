@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import HeaderContainer from "./HeaderContainer";
-import styles from './../style/Team.module.css'
-import leftImg from './../logo/left-player-bg.png'
-import rightImg from './../logo/right-player-bg.png'
-import Player from "./Player";
-import Button from "./ButtonComponentTeam";
+import HeaderContainer from "../HeaderContainer";
+import styles from '../../style/Team.module.css'
+import leftImg from '../../logo/left-player-bg.png'
+import rightImg from '../../logo/right-player-bg.png'
+import Player from "../Player";
+import Button from "../ButtonComponentTeam";
 import Modal from "react-modal";
-import PlayerForm from "./PlayerForm";
+import PlayerForm from "../PlayerForm";
 import {useDispatch, useSelector} from "react-redux";
-import {getPlayers, putFilterPlayers} from "../redux/TeamReducer";
-import Paginator from "./Paginator";
+import {getPlayers, putFilterPlayers} from "../../redux/TeamReducer";
+import Paginator from "../Paginator";
 
 
 const customStyles = {

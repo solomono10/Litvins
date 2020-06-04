@@ -7,6 +7,7 @@ import HomeReducer from "./redux/HomeReducer";
 import ClubReducer from "./redux/ClubReducer";
 import NewsReducer from "./redux/NewsReducer";
 import ContactReducer from "./redux/ContactReducer";
+import AuthReducer from "./redux/AuthReducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -18,7 +19,8 @@ const store = createStore(
         homePage: HomeReducer,
         clubPage: ClubReducer,
         newsPage: NewsReducer,
-        contactPage: ContactReducer
+        contactPage: ContactReducer,
+        authPage: AuthReducer
     })
     , composeEnhancers(applyMiddleware(thunkMiddleware)));
 

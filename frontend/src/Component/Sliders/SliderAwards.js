@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './../style/SliderAwards.module.css'
+import styles from '../../style/SliderAwards.module.css'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css";
 import 'react-alice-carousel/lib/alice-carousel.css'
-import img1 from './../logo/award-img1.png'
-import img2 from './../logo/award-img2.png'
-import img3 from './../logo/award-img3.png'
-import img4 from './../logo/award-img4.png'
-import img5 from './../logo/award-img5.png'
+import img1 from '../../logo/award-img1.png'
+import img2 from '../../logo/award-img2.png'
+import img3 from '../../logo/award-img3.png'
+import img4 from '../../logo/award-img4.png'
+import img5 from '../../logo/award-img5.png'
 
 
 const images = [img1,img2,img3,img4,img5];

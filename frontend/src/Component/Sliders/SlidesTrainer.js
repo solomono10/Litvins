@@ -1,8 +1,8 @@
 import React from 'react';
 import { Zoom } from 'react-slideshow-image';
-import style from './../style/SlidesTrainer.module.css';
-import trainer1 from './../logo/EO5DUPDvd5o.jpg'
-import trainer2 from './../logo/5rTlSms1qP4.jpg'
+import style from '../../style/SlidesTrainer.module.css';
+import trainer1 from '../../logo/EO5DUPDvd5o.jpg'
+import trainer2 from '../../logo/5rTlSms1qP4.jpg'
 const images = [
     trainer1,
     trainer2

@@ -1,9 +1,9 @@
 import React from "react";
-import styles from './../style/SliderNextGames.module.css'
+import styles from '../../style/SliderNextGames.module.css'
 import AliceCarousel from 'react-alice-carousel'
 import "react-alice-carousel/lib/alice-carousel.css"
 import 'react-alice-carousel/lib/alice-carousel.css'
-import {games} from "./Footer";
+import {games} from "../MainComponent/Footer";
 import {NavLink} from "react-router-dom";
 import { faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";

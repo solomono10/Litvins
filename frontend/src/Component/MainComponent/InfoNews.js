@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect} from 'react'
-import HeaderContainer from "./HeaderContainer";
-import styles from './../style/InfoNews.module.css'
-import SliderNewsContent from "./SliderNewsContent";
-import SliderListNews from "./SliderListNews";
+import HeaderContainer from "../HeaderContainer";
+import styles from '../../style/InfoNews.module.css'
+import SliderNewsContent from "../Sliders/SliderNewsContent";
+import SliderListNews from "../Sliders/SliderListNews";
 import AsideContainer from "./AsideContainer";
 import {useDispatch, useSelector} from "react-redux";
-import {getListNews, getNews} from "../redux/NewsReducer";
+import {getListNews, getNews} from "../../redux/NewsReducer";
 
 
 export default function InfoNews(props){

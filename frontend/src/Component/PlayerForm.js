@@ -2,11 +2,11 @@ import {Field, reduxForm} from "redux-form";
 import React from "react";
 import styles from './../style/Team.module.css'
 
-const renderField = ({input, label, type, meta: {touched, error, warning}}) => (
+export const renderField = ({input, label, type, meta: {touched, error, warning}, ...props}) => (
     <div className={styles.fieldInput}>
         <label>{label}:</label>
         <div>
-            <input {...input} placeholder={label} type={type}/>
+            <input {...input} placeholder={label} type={type} {...props}/>
             {touched &&
             ((error && <span>{error}</span>) ||
                 (warning && <span>{warning}</span>))}
