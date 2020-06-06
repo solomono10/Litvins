@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+const config = require('config')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path')
 
 const app = express();
-const port = 4000;
 
 // app.use(cors({credential: true, origin: 'http://localhost:3000'}));
 app.use(function (req, res, next) {
@@ -16,18 +16,21 @@ app.use(function (req, res, next) {
     next();
 })
 const urlencodedParser = bodyParser.urlencoded({extended: false})
-// app.use();
+
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json({extended: true}));
 
 app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
-app.use('/team' ,cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
-app.use('/list-matches',cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
-app.use('/club', cors({origin: 'http://localhost:3000'}),require('./routes/club.routes'));
-app.use('/list-news',cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
-app.use('/contact',cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
-app.use('/auth',urlencodedParser,cors({origin: 'http://localhost:3000'}), require('./routes/auth.router'));
+app.use('/team', cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
+app.use('/list-matches', cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
+app.use('/club', cors({origin: 'http://localhost:3000'}), require('./routes/club.routes'));
+app.use('/list-news', cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
+app.use('/contact', cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
+app.use('/auth', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/auth.router'));
 
+
+const PORT = config.get('port') || 4000
 
 if (process.env.NOdE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
@@ -37,19 +40,22 @@ if (process.env.NOdE_ENV === 'production') {
     })
 
 }
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('something bad happened', err)
+
+async function start(){
+    try {
+        await mongoose.connect(config.get('mongoUrl'),{
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        })
+        app.listen(PORT, () => console.log(`server is listing on ${PORT}`) )
+    }catch (e) {
+        console.log('Server Error', e.message);
+        process.exit(1)
     }
-    console.log(`server is listing on ${port}`)
-});
-process.on('unhandledRejection', function (reason, p) {
-    console.log(reason, p);
-})
+}
 
-
-
-
+start()
 
 //const http = require('http');
 // const requestHandler = (req, res) => {};

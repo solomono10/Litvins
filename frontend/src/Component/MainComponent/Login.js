@@ -1,43 +1,29 @@
 import React from "react";
 import styles from './../../style/Login.module.css'
 import {Field, reduxForm} from 'redux-form'
-import {renderField} from "../PlayerForm";
 import {useDispatch} from "react-redux";
 import {logIn} from "../../redux/AuthReducer";
 import {NavLink} from "react-router-dom";
+import {email, required} from "../FormsControls/validation";
+import {Input} from "../FormsControls/FormsControls";
 
-
-export const validate = values => {
-    const errors = {}
-    if (!values.email) {
-        errors.email = 'Required'
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address'
-    }
-    if (!values.password){
-        errors.password = 'Required'
-    }
-    return errors
-}
 
 const LoginForm = (props) => {
     return (
         <form action="" className={styles.form} onSubmit={props.handleSubmit}>
-            <Field name='email' component={renderField} type='text' label='Email'/>
-            <Field name='password' component={renderField} type='password' label='Password'/>
+            <Field name='email' component={Input} type='text' label='Email' validate={[required, email]}/>
+            <Field name='password' component={Input} type='password' label='Password' validate={[required]}/>
             <button type={"submit"}>Войти</button>
         </form>
     )
 }
 const LoginReduxForm = reduxForm({
     form: 'Login',
-    validate
 })(LoginForm);
-
 export default function Login() {
     const dispatch = useDispatch()
     const onSubmit = (formData) => {
-        dispatch(logIn(formData.login,formData.password))
+        dispatch(logIn(formData.login, formData.password))
     }
     return (
         <div className={styles.wrap}>
