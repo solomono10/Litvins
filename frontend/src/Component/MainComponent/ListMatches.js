@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import HeaderContainer from "./HeaderContainer";
-import clubLogo1 from './../logo/club-logo.png'
-import clubLogo2 from './../logo/club-logo1.png'
-import styles from '../style/ListMatch.module.css'
-import AsideContainer from "./MainComponent/AsideContainer";
-import InfoMatch from "./InfoMatch";
-import {getMatches} from "../redux/MatchsReducer";
+import HeaderContainer from "../HeaderContainer";
+import clubLogo1 from '../../logo/club-logo.png'
+import clubLogo2 from '../../logo/club-logo1.png'
+import styles from '../../style/ListMatch.module.css'
+import AsideContainer from "./AsideContainer";
+import InfoMatch from "../InfoMatch";
+import {getMatches} from "../../redux/MatchsReducer";
 import {useDispatch, useSelector} from "react-redux";;
 
 

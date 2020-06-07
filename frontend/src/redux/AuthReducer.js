@@ -13,7 +13,7 @@ const SET_ERROR_AUTH_USER_DATA = 'SET_ERROR_AUTH_USER_DATA';
 const initState = {
     error: null,
     isAuth: false,
-    userId: null,
+    playerId: null,
     email: null,
     login: null,
     message:''
@@ -30,9 +30,10 @@ const AuthReducer = (state = initState, action) => {
             }
         }
         case SET_AUTH_USER: {
+            debugger
             return {
                 ...state,
-                userId: action.data.userId,
+                playerId: action.data.playerId,
                 isAuth: true,
                 message: action.data.message
             }
@@ -56,9 +57,10 @@ export const logIn = (login, password) => async (dispatch) => {
     // dispatch(SuccessLogin(res))
 };
 export const registration = (formData) => async (dispatch) => {
+    console.log(formData)
     const res = await authAPI.registration(formData)
     console.log(res)
-    // dispatch(SetAuthUser(res))
+    dispatch(SetAuthUser(res.data))
 };
 
 export default AuthReducer

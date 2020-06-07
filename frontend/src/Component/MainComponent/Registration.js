@@ -1,11 +1,12 @@
 import React from "react";
 import styles from './../../style/Registration.module.css'
 import {Field, FormSection, reduxForm} from "redux-form";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {registration} from "../../redux/AuthReducer";
 import {Birthday, Name} from "../FormsControls/FormsControls";
 import {Input} from "../FormsControls/FormsControls";
 import {required} from "../FormsControls/validation";
+import {Redirect} from "react-router-dom";
 
 
 
@@ -30,10 +31,17 @@ const RegistrationForm = (props) => {
 const RegistrationReduxForm = reduxForm({
     form: 'Registration',
 })(RegistrationForm);
+
 export default function Registration() {
+    const player = useSelector(state => state.authPage.playerId)
+    const isAuth = useSelector(state => state.authPage.isAuth)
+    console.log(player)
     const dispatch =useDispatch()
     const onSubmit = (formData) => {
         dispatch(registration(formData))
+    }
+    if (isAuth){
+        return <Redirect to={"/"} />;
     }
     return (
         <div className={styles.wrap}>

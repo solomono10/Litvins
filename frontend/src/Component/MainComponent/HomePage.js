@@ -11,7 +11,7 @@ import {getInfoHomePage} from "../../redux/HomeReducer";
 
 export default function HomePage(){
     const dispatch = useDispatch()
-    
+    const player = useSelector(state => state.authPage.playerId)
     const lastMatch = useSelector(state => state.homePage.lastMatch)
     const listMatches = useSelector(state => state.homePage.listMatches)
     const newsList = useSelector(state => state.homePage.newsList)

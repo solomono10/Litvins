@@ -17,7 +17,6 @@ app.use(function (req, res, next) {
 })
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 
-app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json({extended: true}));
 

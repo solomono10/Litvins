@@ -27,6 +27,7 @@ const customStyles = {
     }
 };
 export default function Team() {
+    const player = useSelector(state => state.authPage.playerId)
     const [modalIsOpen, setIsOpen] = useState(false);
     const dispatch = useDispatch();
     const players = useSelector(state => state.teamPage.players)

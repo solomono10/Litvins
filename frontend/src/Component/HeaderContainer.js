@@ -12,7 +12,7 @@ export default function HeaderContainer({title, activeLink, link, childrenLink =
             </div>
             {extraInfo ?
                 <div className={styles.headerContainer__extraInfo}>
-                    <TimeInfoForNextMatch header={header}/>
+                    <TimeInfoForNextMatch header={header} nextMatch={extraInfo}/>
                 </div>
                 : null}
             <div className={styles.breadcrumb}>
