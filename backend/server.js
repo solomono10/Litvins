@@ -13,38 +13,35 @@ const PORT = process.env.PORT || 4000
 const host = '123.45.678.901'
 
 
-// app.use(bodyParser.json());
-// app.use(express.json({extended: true}));
-// app.use(session({
-//     store: new MongoStore({
-//         mongooseConnection: mongoose.connection,
-//         url: config.get('mongoUrl')
-//     }),
-//     cookie: { maxAge: 300000 , secure:true },
-//     secret: 'foo',
-//     resave: false,
-//     saveUninitialized: true
-// }))
+app.use(bodyParser.json());
+app.use(express.json({extended: true}));
+app.use(session({
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        url: config.get('mongoUrl')
+    }),
+    cookie: { maxAge: 300000 , secure:true },
+    secret: 'foo',
+    resave: false,
+    saveUninitialized: true
+}))
 
-// app.use(function (req, res, next) {
-//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
-//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
-//     res.setHeader('Access-Control-Allow-Credentials', true);
-//     next();
-// })
-//
-// app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
-// app.use('/team', cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
-// app.use('/list-matches', cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
-// app.use('/club', cors({origin: 'http://localhost:3000'}), require('./routes/club.routes'));
-// app.use('/list-news', cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
-// app.use('/contact', cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
-// app.use('/auth', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/auth.router'));
-// app.use('/register', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/registration.router'));
-app.get('/team', async (req,res)=>{
-    res.send('tasks')
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
 })
+
+app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
+app.use('/team', cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
+app.use('/list-matches', cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
+app.use('/club', cors({origin: 'http://localhost:3000'}), require('./routes/club.routes'));
+app.use('/list-news', cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
+app.use('/contact', cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
+app.use('/auth', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/auth.router'));
+app.use('/register', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/registration.router'));
 
 
 
@@ -58,11 +55,11 @@ if (process.env.NOdE_ENV === 'production') {
 }
 async function start(){
     try {
-        // await mongoose.connect(config.get('mongoUrl'),{
-        //     useNewUrlParser: true,
-        //     useUnifiedTopology: true,
-        //     useCreateIndex: true
-        // })
+        await mongoose.connect(config.get('mongoUrl'),{
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        })
         app.listen(PORT, () => console.log(`server is listing on ${PORT}`) )
     }catch (e) {
         console.log('Server Error', e.message);
