@@ -66,7 +66,10 @@ export const authAPI = {
     login(login, password) {
         return instance.post(`auth/login`, {login, password})
     },
+    logOut() {
+        return instance.post(`auth/logout`)
+    },
     registration(data){
-        return instance.post(`auth/registration`,{data})
+        return instance.post(`register`,{data})
     }
 };

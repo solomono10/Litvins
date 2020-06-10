@@ -101,7 +101,6 @@ export const setNewsList = (data) =>{
 
 export const getInfoHomePage = () => async (dispatch) =>{
     const data = await homeApi.getInfoHomePage()
-    console.log(data)
     dispatch(setLastMatches(data.searchLastMatchValue))
     dispatch(setInfoAboutClub(data.infoAboutClub))
     dispatch(setStatistics(data.statisticsPlayers))

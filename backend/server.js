@@ -1,13 +1,31 @@
+const session = require('express-session')
 const express = require('express');
 const cors = require('cors');
 const config = require('config')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path')
+const MongoStore = require('connect-mongo')(session);
 
 const app = express();
+const urlencodedParser = bodyParser.urlencoded({extended: false})
+const PORT = config.get('port') || 4000
+const host = '123.45.678.901'
 
-// app.use(cors({credential: true, origin: 'http://localhost:3000'}));
+
+app.use(bodyParser.json());
+app.use(express.json({extended: true}));
+app.use(session({
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        url: config.get('mongoUrl')
+    }),
+    cookie: { maxAge: 300000 , secure:true },
+    secret: 'foo',
+    resave: false,
+    saveUninitialized: true
+}))
+
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
@@ -15,10 +33,6 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 })
-const urlencodedParser = bodyParser.urlencoded({extended: false})
-
-app.use(bodyParser.json());
-app.use(express.json({extended: true}));
 
 app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
 app.use('/team', cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
@@ -27,9 +41,8 @@ app.use('/club', cors({origin: 'http://localhost:3000'}), require('./routes/club
 app.use('/list-news', cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
 app.use('/contact', cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));
 app.use('/auth', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/auth.router'));
+app.use('/register', urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/registration.router'));
 
-
-const PORT = config.get('port') || 4000
 
 if (process.env.NOdE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
@@ -39,7 +52,6 @@ if (process.env.NOdE_ENV === 'production') {
     })
 
 }
-
 async function start(){
     try {
         await mongoose.connect(config.get('mongoUrl'),{
@@ -53,7 +65,6 @@ async function start(){
         process.exit(1)
     }
 }
-
 start()
 
 //const http = require('http');

@@ -47,34 +47,34 @@ export default class SliderNextGames extends React.PureComponent {
                     transitionTimingFunction={'ease-in-out'}
                     ref={(el)=> (this.Carousel =el)}
                 >
-                    {games.map((game) => {
-                        return (
-                            <div className="item" key={game.id}>
-                                <div className={styles.wrap} >
-                                    <div className={styles.wrap__container}>
-                                        <div className={styles.item__wrap__logo}>
-                                            <img src={game.logoFirst} alt=""/>
-                                        </div>
-                                        <div className={styles.item__wrap__teamName}>
-                                            <span>{game.nameFirst}</span>
-                                        </div>
-                                        <div className={styles.item__wrap__versus}>
-                                            <span>Vs</span>
-                                        </div>
-                                        <div className={styles.item__wrap__teamName}>
-                                            <span>{game.nameSecond}</span>
-                                        </div>
-                                        <div className={styles.item__wrap__logo}>
-                                            <img src={game.logoSecond} alt=""/>
-                                        </div>
-                                    </div>
-                                    <div className={styles.item__wrap__link}>
-                                        <NavLink to={'#'}><span>Read More</span></NavLink>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
+                    {/*{games.map((game) => {*/}
+                    {/*    return (*/}
+                    {/*        <div className="item" key={game.id}>*/}
+                    {/*            <div className={styles.wrap} >*/}
+                    {/*                <div className={styles.wrap__container}>*/}
+                    {/*                    <div className={styles.item__wrap__logo}>*/}
+                    {/*                        <img src={game.logoFirst} alt=""/>*/}
+                    {/*                    </div>*/}
+                    {/*                    <div className={styles.item__wrap__teamName}>*/}
+                    {/*                        <span>{game.nameFirst}</span>*/}
+                    {/*                    </div>*/}
+                    {/*                    <div className={styles.item__wrap__versus}>*/}
+                    {/*                        <span>Vs</span>*/}
+                    {/*                    </div>*/}
+                    {/*                    <div className={styles.item__wrap__teamName}>*/}
+                    {/*                        <span>{game.nameSecond}</span>*/}
+                    {/*                    </div>*/}
+                    {/*                    <div className={styles.item__wrap__logo}>*/}
+                    {/*                        <img src={game.logoSecond} alt=""/>*/}
+                    {/*                    </div>*/}
+                    {/*                </div>*/}
+                    {/*                <div className={styles.item__wrap__link}>*/}
+                    {/*                    <NavLink to={'#'}><span>Read More</span></NavLink>*/}
+                    {/*                </div>*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    )*/}
+                    {/*})}*/}
                 </AliceCarousel>
             </div>
         )
