@@ -1,8 +1,25 @@
 {
+  "scripts": {
+    "start": "concurrently  \"(npm start --prefix backend)\" \"(npm start  --prefix frontend)\""
+  },
   "dependencies": {
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
-  }
+  },
+  "name": "litvins",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DantsevichIvan/Litvins.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DantsevichIvan/Litvins/issues"
+  },
+  "homepage": "https://github.com/DantsevichIvan/Litvins#readme",
+  "description": ""
 }

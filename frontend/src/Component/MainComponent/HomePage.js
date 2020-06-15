@@ -27,9 +27,9 @@ export default function HomePage(){
         dispatch(getInfoHomePage())
     }, [])
 
-    if (!player){
-        return <Redirect to={"/registration"} />;
-    }
+    // if (!player){
+    //     return <Redirect to={"/registration"} />;
+    // }
 
     return(
         <div>

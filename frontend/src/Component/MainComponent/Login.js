@@ -11,9 +11,9 @@ import {Input} from "../FormsControls/FormsControls";
 const LoginForm = (props) => {
     return (
         <form action="" className={styles.form} onSubmit={props.handleSubmit}>
-            <Field name='email' component={Input} type='text' label='Email' validate={[required, email]}/>
-            <Field name='password' component={Input} type='password' label='Password' validate={[required]}/>
-            <button type={"submit"}>Войти</button>
+            <Field name='email' component={Input} placeholder='ivaninanov@mail.ru' type='text' label='Почта' validate={[required, email]}/>
+            <Field name='password' component={Input}  placeholder='Введите пароль' type='password' label='Пароль' validate={[required]}/>
+            <button type={"submit"} className={styles.button}>Войти</button>
         </form>
     )
 }
@@ -28,10 +28,10 @@ export default function Login() {
     return (
         <div className={styles.wrap}>
             <div className={styles.container}>
-                <button><NavLink to={'/'}>X</NavLink></button>
-                <h1>Login</h1>
+                {/*<button><NavLink to={'/'}>X</NavLink></button>*/}
+                {/*<h1>Login</h1>*/}
                 <LoginReduxForm onSubmit={onSubmit}/>
-                <NavLink to='/registration'>Sing up</NavLink>
+                <NavLink to='/registration'>Зарегистрироваться</NavLink>
             </div>
         </div>
     )

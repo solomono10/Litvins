@@ -3,12 +3,10 @@ import styles from './../../style/Registration.module.css'
 import {Field, FormSection, reduxForm} from "redux-form";
 import {useDispatch, useSelector} from "react-redux";
 import {registration} from "../../redux/AuthReducer";
-import {Birthday, Name} from "../FormsControls/FormsControls";
 import {Input} from "../FormsControls/FormsControls";
 import {required} from "../FormsControls/validation";
 import {Redirect} from "react-router-dom";
-
-
+import {Birthday, Name} from "../FormsControls/FormsComponent";
 
 const RegistrationForm = (props) => {
     return (
@@ -33,9 +31,8 @@ const RegistrationReduxForm = reduxForm({
 })(RegistrationForm);
 
 export default function Registration() {
-    const player = useSelector(state => state.authPage.playerId)
+    // const player = useSelector(state => state.authPage.playerId)
     const isAuth = useSelector(state => state.authPage.isAuth)
-    console.log(player)
     const dispatch =useDispatch()
     const onSubmit = (formData) => {
         dispatch(registration(formData))
