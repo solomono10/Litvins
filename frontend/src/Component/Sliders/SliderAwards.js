@@ -13,8 +13,17 @@ import img5 from '../../logo/award-img5.png'
 const images = [img1,img2,img3,img4,img5];
 
 class SliderAwards extends React.PureComponent {
-    state = {mouseTrackingEnabled: true, preventEventOnTouchMove: true}
-    responsive = {
+    state = {
+        // pidr:false,
+        mouseTrackingEnabled: true,
+        preventEventOnTouchMove: true
+    }
+    // onpidr(){
+    //     this.setState(()=>{
+    //         this.state.pidr = true
+    //     })
+    // }
+responsive = {
         0: {items: 1},
         600: {items: 2},
         960: {items: 3},
@@ -56,5 +65,4 @@ class SliderAwards extends React.PureComponent {
         )
     }
 }
-
 export default SliderAwards

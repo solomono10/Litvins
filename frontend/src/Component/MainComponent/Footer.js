@@ -5,10 +5,10 @@ import {Link, NavLink} from "react-router-dom";
 import logo from './../../logo/Litvin-LOGO.png'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faMapMarkerAlt, faPhoneAlt, faAngleRight, faChevronRight} from "@fortawesome/free-solid-svg-icons";
-import arrow from './../../logo/—Pngtree—right arrow line black icon_4008091.png'
+// import arrow from './../../logo/—Pngtree—right arrow line black icon_4008091.png'
 
 const inputSubmitStyle = {
-    backgroundImg: 'url(' + arrow + ')',
+    // backgroundImg: 'url(' + arrow + ')',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '50%'
 
@@ -28,7 +28,7 @@ export default function Footer() {
                     <span>Подписаться</span>
                     <div className={styles.wrapper__footer_form_send}>
                         <input type="send" />
-                        <FontAwesomeIcon icon={faChevronRight}/>
+                        {/*<FontAwesomeIcon icon={faChevronRight}/>*/}
                     </div>
                 </form>
                 <div className={styles.wrapper__footer_contact}>

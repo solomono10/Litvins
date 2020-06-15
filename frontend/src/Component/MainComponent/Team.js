@@ -12,20 +12,7 @@ import {getPlayers, putFilterPlayers} from "../../redux/TeamReducer";
 import Paginator from "../Paginator";
 
 
-const customStyles = {
-    content: {
-        width: '700px',
-        height: '300px',
-        top: '55%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 9,
-        position: 'relative'
-    }
-};
+
 export default function Team() {
     const player = useSelector(state => state.authPage.playerId)
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -62,7 +49,7 @@ export default function Team() {
                     <Button title={'Midfielders'} method={filterPlayers}/>
                     <Button title={'Forwards'} method={filterPlayers}/>
                     <Button title={'Goalkeepers'} method={filterPlayers}/>
-                    {/*<Button title={'Add new Player'} method={toggleOpen}/>*/}
+                    <Button title={'Add new Player'} method={toggleOpen}/>
                 </div>
                 <div className={styles.listPlayers}>
                     <div className={styles.leftPlayer}><img src={leftImg} alt=""/></div>
@@ -81,17 +68,6 @@ export default function Team() {
                         onDispatchMethod={dispatchMethod}
                     />
                 </div>
-            </div>
-
-            <div>
-                <Modal isOpen={modalIsOpen}
-                       style={customStyles}
-                       ariaHideApp={false}
-                       contentLabel="Example Modal"
-                       className={styles.modal}>
-                    <button className={styles.modal_CloseButton} onClick={toggleOpen}>X</button>
-                    <PlayerForm onSubmit={submit}/>
-                </Modal>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import HeaderContainer from "../HeaderContainer";
 import clubLogo1 from '../../logo/club-logo.png'
 import clubLogo2 from '../../logo/club-logo1.png'
@@ -6,7 +6,8 @@ import styles from '../../style/ListMatch.module.css'
 import AsideContainer from "./AsideContainer";
 import InfoMatch from "../InfoMatch";
 import {getMatches} from "../../redux/MatchsReducer";
-import {useDispatch, useSelector} from "react-redux";;
+import {useDispatch, useSelector} from "react-redux";
+import Modal from "react-modal";
 
 
 
@@ -17,14 +18,38 @@ export const nextMatchInfo = {
     data:'March 29, 2020 | 12.15 am',
     location:'СШ №180 Радужная 8/3'
 };
-export default function ListMatches({}) {
+
+
+const customStyles = {
+    content: {
+        width: '700px',
+        height: '300px',
+        top: '55%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 9,
+        position: 'relative'
+    }
+};
+
+
+export default function ListMatches() {
     const dispatch = useDispatch()
     const listMatches = useSelector(state => state.matchesPage.matches)
+    const [modalIsOpen, setIsOpen] = useState(false);
 
     useEffect(()=>{
         dispatch(getMatches())
     },[])
 
+    const onAddmatchBtn = () => {
+
+        setIsOpen(!modalIsOpen)
+        console.log(modalIsOpen)
+    }
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -33,12 +58,24 @@ export default function ListMatches({}) {
             <div className={styles.container}>
                 <div className={styles.container__content}>
                     <AsideContainer/>
-                    <div className={styles.listMatch}>
-                        {
-                            listMatches.map((match)=>{
-                                return <InfoMatch match={match} key={match.id}/>
-                            })
-                        }
+                    <div>
+                        <div className={styles.listMatch}>
+                            {
+                                listMatches.map((match)=>{
+                                    return <InfoMatch match={match} key={match.id}/>
+                                })
+                            }
+                        </div>
+                        <button onClick={onAddmatchBtn} className={styles.addMatch}>Add match</button>
+                    </div>
+                    <div>
+                        <Modal isOpen={modalIsOpen}
+                               style={customStyles}
+                               ariaHideApp={false}
+                               contentLabel="Example Modal"
+                               className={styles.modal}>
+                            <button className={styles.modal_CloseButton} onClick={onAddmatchBtn}>X</button>
+                        </Modal>
                     </div>
                 </div>
             </div>
