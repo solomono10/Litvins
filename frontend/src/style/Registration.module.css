@@ -1,22 +1,82 @@
 .wrap{
-    height: 100vh;
+    height: max-content;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 .container{
-    width: 50%;
-    height: 50%;
+    width: 100%;
     margin: auto;
-    background-color: #ed1c27;
+    height: 100%;
 }
 .form{
+    width: 60%;
+    margin: 150px auto;
+    display: grid;
+    grid-template-areas: 'n p'
+                         'b p'
+                         'i p'
+                         's p'
+                         'btn btn';
+
+    grid-template-rows: 0.5fr 100px 0.5fr 0.5fr 0.1fr;
+    grid-template-columns: 305px 305px;
+    grid-column-gap:50px;
+}
+.name{
+    width: 100%;
+    grid-area: n;
+}
+.birthday{
+    width: 100%;
+    grid-area: b;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
-.brth_container{
-    display: flex;
-    justify-content: center;
+.birthday span{
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #302E35;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 12px;
 }
+.statistic{
+    width: 100%;
+    grid-area: s;
+}
+.infoAbout{
+    grid-area: i;
+}
+.personalData{
+    width: 100%;
+    grid-area: p;
+}
+.btn{
+    width: 100%;
+    grid-area: btn;
+}
+.btn button{
+
+    width: 303px;
+    height: 45px;
+    background: #9F1B1B;
+    border-radius: 5px;
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border: none;
+}
+input[name='personalData.email'], input[name='personalData.password'],input[name='personalData.repeatPassword']{
+    background: rgba(159, 27, 27, 0.05);
+}
+
+
+

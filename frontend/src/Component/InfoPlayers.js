@@ -1,10 +1,12 @@
 import React, {useCallback, useEffect} from "react";
 import styles from './../style/InfoPlayer.module.css'
-import HeaderContainer from "./HeaderContainer";
-import avatar from "./../logo/pngtree-users-vector-icon-png-image_3725294.jpg"
+import avatar from "./../logo/f401649c954a6ca111acf083eac616cf.jpg"
 import SliderPlayers from "./Sliders/SliderPlayers";
 import {useDispatch, useSelector} from "react-redux";
 import {getPlayer, getPlayers} from "../redux/TeamReducer";
+import {IndicatorStatistic} from "./IndicatorStatistic";
+
+
 
 const infoForPlayer = [
     {heading: 'POSITION', value: 'Forward'}, {heading: 'Матчи', value: '122'}, {
@@ -30,7 +32,7 @@ export default function InfoPlayer(props) {
         } catch (e) {
             console.log("Error Server")
         }
-    })
+    },[])
 
     useEffect(() => {
         getInfoPlayer()
@@ -39,67 +41,57 @@ export default function InfoPlayer(props) {
 
         return (
             <div>
-                <div className={styles.header}>
-                    <HeaderContainer activeLink={'Команда'} title={player.name} />
-                </div>
-                <div className={styles.emptyContainer}>
-                </div>
-                <div className={styles.containerPlayer}>
-                    <div className={styles.avatar}>
-                        <img src={avatar} alt=""/>
+                <div className={styles.container}>
+                    <div className={styles.header}>
+                        <div className={styles.headerContainer}>
+                            <div className={styles.headerInfo}>
+                                <div className={styles.headerInfoName}>
+                                    <span>Иван</span>
+                                    <span className={styles.lastName}>Данцевич</span>
+                                </div>
+                                <span className={styles.headerInfoPosition}>Защитник</span>
+                                <span className={styles.headerInfoNumber}>17</span>
+                                <div className={styles.headerInfoInner}>
+                                    <span>5</span>
+                                    <span>30</span>
+                                </div>
+                            </div>
+                            <div className={styles.avatar}>
+                                <img src={avatar} alt=""/>
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.number}>
-                        <span>{player.numberPlayer}</span>
-                    </div>
-                    <div className={styles.container}>
-                        <div className={styles.name}><h2>{player.name}</h2></div>
-                        <div className={styles.wrap}>
-                            <ul className={styles.info}>
-                                {infoForPlayer.map((el) => {
-                                    return <li key={el.value}><span className={styles.heading}>{el.heading}</span><span
-                                        className={styles.value}>{el.value}</span></li>
-                                })}
-                            </ul>
+                    <div className={styles.infoPlayer}></div>
+                    <div className={styles.statistic}>
+                        <div className={styles.statisticContainer}>
+                            <div className={styles.statistics}>
+                                <span className={styles.statisticTitle}>Статистика</span>
+                                <div className={styles.listStatistic}>
+                                    <IndicatorStatistic/>
+                                    <IndicatorStatistic/>
+                                    <IndicatorStatistic/>
+                                    <IndicatorStatistic/>
+                                    <IndicatorStatistic/>
+                                    <IndicatorStatistic/>
+
+                                </div>
+                            </div>
+                            <div className={styles.rating}>
+                                <span className={styles.statisticTitle}>Рейтинг</span>
+                                <div className={styles.circle}>
+                                    <span className={styles.ratingNumber}>90</span>
+                                    <div className={styles.slice}>
+                                        <div className={styles.sliceBar}></div>
+                                        <div className={styles.sliceFill}></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.line}>
-                    <div className={styles.containerLine}>
 
-                    </div>
-                </div>
-                <div className={styles.playerTotalInfoContainer}>
-                    <div className={styles.playerTotalInfo}>
-                        <p><strong>Aenean lobortis eu nibh eu euismod.
-                            In ullamcorper, velit sed tincidunt tempor, ante elit euismod magna, vel scelerisque odio
-                            velit nec arcu.
-                            Nulla dolor sapien, vehicula sit amet augue nec, consequat aliquet velit.
-                            Donec euismod interdum mauris id dapibus.</strong></p>
-                        <p>
-                            Fusce mollis ante dolor, in tincidunt justo vehicula id.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                            egestas.
-                            Nam nec tortor sit amet metus vestibulum sagittis. Donec sed dignissim nisi.
-                            Pellentesque ac dolor vestibulum, sollicitudin leo ac, pretium nulla. Mauris sit amet mattis
-                            turpis, eu molestie lectus.
-                            Donec semper sem ac dolor euismod vulputate. Quisque massa elit, viverra et euismod nec,
-                            porta eget elit.
-                            Aliquam molestie tempus ex, ut iaculis tortor eleifend ac. Aliquam id massa facilisis,
-                            iaculis orci et, ornare augue.
-                            Fusce eget sollicitudin est. Fusce ultrices enim ut aliquam sollicitudin.
-                        </p>
-                        <ul>
-                            <li>Maecenas a nisl in turpis fermentum imperdiet;</li>
-                            <li>Nullam at diam et odio consectetur fermentum;</li>
-                            <li>Maecenas volutpat lacus quis sem congue egestas;</li>
-                            <li>Quisque sit amet nunc quis quam tincidunt scelerisque;</li>
-                            <li>Maecenas vestibulum ligula sed augue dictum, quis tincidunt nulla pellentesque;</li>
-                        </ul>
-                    </div>
-                </div>
                 <div className={styles.sliderContainer}>
-                    <h3 className={styles.otherTitle}>Other <span>Players</span></h3>
+                    <h3 className={styles.otherTitle}>Другие игроки</h3>
                     <div className={styles.playerWrap}>
                         <SliderPlayers players={players}/>
                     </div>

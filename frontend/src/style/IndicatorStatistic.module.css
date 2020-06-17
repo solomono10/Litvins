@@ -1,0 +1,39 @@
+.skill{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 0 0;
+
+    width: 224px;
+    height: max-content;
+}
+
+.bar_title{
+    position: relative;
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #302E35;
+}
+
+.percent{
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+}
+
+.bar{
+    position: relative;
+    background: #302E35;
+    height: 15px !important;
+    z-index: -1;
+    margin: 0 0 15px 0;
+}
+.bar_fill{
+    z-index: 2;
+    position: absolute;
+    height: 15px;
+    background-color: #9F1B1B;
+    -webkit-animation: bar-fill-developer 2s ease-out;
+}

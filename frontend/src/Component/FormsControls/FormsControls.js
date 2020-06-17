@@ -14,3 +14,14 @@ export const Input = ({input, label, type,placeholder, meta: {touched, error, wa
         </div>
     </div>
 )
+
+
+export const renderFieldStatistic = ({ input, label,placeholder, type, meta: { touched, error } }) => (
+    <div className={styles.fieldStatistic}>
+        <label>{label}</label>
+        <div>
+            <input {...input} type={type} placeholder={placeholder} />
+            {touched && error && <span>{error}</span>}
+        </div>
+    </div>
+)

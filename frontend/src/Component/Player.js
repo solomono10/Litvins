@@ -1,19 +1,37 @@
 import React from 'react';
 import styles from './../style/Player.module.css'
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
+import avatar from './../logo/f401649c954a6ca111acf083eac616cf.jpg'
+import {IndicatorPlayer} from "./IndicatorPlayer";
 
+export default function Player({player}) {
 
-export default function Player ({player}) {
-    return(
+    return (
         <div className={styles.playerArticle}>
-            <div className={styles.imgWrap}>
-                <div className={styles.playerNumber}><span>{player.numberPlayer}</span></div>
-                <div className={styles.bio}><NavLink to={'/team/player/' + player.id}><span>bio</span></NavLink></div>
+            <div className={styles.number}>
+                <span>{player.numberPlayer}</span>
             </div>
-            <div className={styles.info}>
-                <h3><NavLink to={'/team/player/' + player.id}>{player.name}</NavLink></h3>
-                <span>{player.position}</span>
+            <div className={styles.container}>
+                <div className={styles.avatar}>
+                    <img src={avatar} alt=""/>
+                </div>
+                <div className={styles.name}>
+                    <NavLink to={'/team/player/' + player.id}>{player.name}</NavLink>
+                    <span>Фамилия</span>
+                </div>
+                <div className={styles.position}>
+                    <span>{player.position}</span>
+                </div>
+                <div className={styles.indicators}>
+                    <IndicatorPlayer/>
+                    <IndicatorPlayer/>
+                    <IndicatorPlayer/>
+                    <IndicatorPlayer/>
+                    <IndicatorPlayer/>
+                    <IndicatorPlayer/>
+                </div>
             </div>
         </div>
     )
 }
+// <NavLink to={'/team/player/' + player.id}></NavLink>

@@ -44,6 +44,7 @@
 .listPlayers {
     position: relative;
     height: max-content;
+    margin: 20px 40px 40px;
 }
 
 .leftPlayer {
@@ -75,8 +76,9 @@
     margin: 20px 40px 0;
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: 420px 420px;
+    grid-template-rows: 428px 428px;
     grid-template-columns: 310px 310px 310px 310px;
+    grid-row-gap: 40px;
 }
 
 .modal {

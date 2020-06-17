@@ -1,0 +1,95 @@
+
+/*all*/
+input[name='name.firstName'], input[name='name.lastName']{
+    background: rgba(159, 27, 27, 0.05);
+}
+input[name='infoAbout.height/weight']{
+    border: none;
+    background: rgba(159, 27, 27, 0.05);
+}
+/*selects*/
+.selects{
+    display: flex;
+}
+.title {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(48, 46, 53, 0.45);
+}
+.option {
+    background: rgba(159, 27, 27, 0.1);
+    border-radius: 10px;
+    width: 147px;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+    color: #302E35;
+}
+select[name] {
+    background: rgba(159, 27, 27, 0.05);
+    border-radius: 10px;
+    height: 44px;
+    border: none;
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(48, 46, 53, 0.45);
+    box-sizing: border-box;
+    padding: 10px 0 10px 6px;
+    margin-right: 8px;
+}
+select[name]:focus{
+    outline: none;
+}
+
+
+/*Birthday*/
+select[name='birthday.mouth']{
+    width: 110px;
+}
+select[name='birthday.mouth'] input:visited{
+    background: rgba(33, 15, 15, 0.05);
+}
+select[name='birthday.day'] {
+    width: 96px;
+}
+select[name='birthday.year'] {
+    width: 83px;
+}
+/*InfoAbout*/
+select[name='infoAbout.position'], select[name='infoAbout.numberPlayer'] {
+    width: 140px;
+}
+.infoAbout{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+}
+.inputSelects{
+    display: flex;
+    padding-bottom: 26px;
+}
+.select span{
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #302E35;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+/*wrapStatistic*/
+.wrapStatistic{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}

@@ -1,3 +1,4 @@
+/*input*/
 .fieldInput {
     text-align: left;
 }
@@ -43,19 +44,50 @@
     line-height: 20px;
     color: rgba(48, 46, 53, 0.45);
 }
-.inputError{
+.inputError {
     border: 2px solid #9F1B1B;
     transition: 0.4s;
 }
-.error{
+.error {
     margin-top: 8px;
-    font-family: Montserrat,sans-serif;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     color: #9F1B1B;
 }
-.warning{
+.warning {
 
+}
+
+
+/**/
+.fieldStatistic{
+    width: 50%;
+    text-align: left;
+    padding-bottom: 24px;
+}
+.fieldStatistic label{
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #302E35;
+}
+.fieldStatistic input{
+    background: rgba(159, 27, 27, 0.05);
+    border: none;
+    border-radius: 10px;
+    width: 140px;
+    height: 44px;
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(48, 46, 53, 0.45);
+    padding: 12px;
+    box-sizing: border-box;
 }
