@@ -5,6 +5,7 @@ import SliderPlayers from "./Sliders/SliderPlayers";
 import {useDispatch, useSelector} from "react-redux";
 import {getPlayer, getPlayers} from "../redux/TeamReducer";
 import {IndicatorStatistic} from "./IndicatorStatistic";
+import {ContainerInfo} from "./ContainerInfo";
 
 
 
@@ -61,7 +62,12 @@ export default function InfoPlayer(props) {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.infoPlayer}></div>
+                    <div className={styles.infoPlayer}>
+                        <ContainerInfo value={'12.01.1997'} title={'Дата рождения '}/>
+                        <ContainerInfo value={'180/72'} title={'Рост/Вес'}/>
+                        <ContainerInfo value={'122'} title={'Сыгранные матчи '}/>
+                        <ContainerInfo value={'155'} title={'Голов забито'}/>
+                    </div>
                     <div className={styles.statistic}>
                         <div className={styles.statisticContainer}>
                             <div className={styles.statistics}>

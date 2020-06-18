@@ -50,8 +50,8 @@ export default function Team() {
                     <Button title={'Add new Player'} method={toggleOpen}/>
                 </div>
                 <div className={styles.listPlayers}>
-                    <div className={styles.leftPlayer}><img src={leftImg} alt=""/></div>
-                    <div className={styles.rightPlayer}><img src={rightImg} alt=""/></div>
+                    {/*<div className={styles.leftPlayer}><img src={leftImg} alt=""/></div>*/}
+                    {/*<div className={styles.rightPlayer}><img src={rightImg} alt=""/></div>*/}
                     <div className={styles.containerCenter}>
                         {players.map((player) => {
                             return <Player key={player.id} player={player}/>
