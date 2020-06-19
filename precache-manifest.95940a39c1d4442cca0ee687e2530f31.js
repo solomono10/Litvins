@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "499b7e0dd07f950879fcce1ebcfd610d",
+    "revision": "8bd60227c66c4a624319cd6944fd6a70",
     "url": "/Litvins/index.html"
   },
   {
-    "revision": "90e361346ef4f55a4b78",
+    "revision": "dfd36a9976db69724433",
     "url": "/Litvins/static/css/10.9081598f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/css/13.dfbe533f.chunk.css"
   },
   {
-    "revision": "6a60a16891b1e65b5292",
-    "url": "/Litvins/static/css/14.982a68a5.chunk.css"
+    "revision": "4b4bbeb519a5eead51aa",
+    "url": "/Litvins/static/css/14.432ba1c4.chunk.css"
   },
   {
     "revision": "82f230446c505e417529",
@@ -76,12 +76,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/1.26309b86.chunk.js"
   },
   {
-    "revision": "90e361346ef4f55a4b78",
-    "url": "/Litvins/static/js/10.f1838ed6.chunk.js"
+    "revision": "dfd36a9976db69724433",
+    "url": "/Litvins/static/js/10.62c02739.chunk.js"
   },
   {
     "revision": "81896c98bac7b5b16ab1d3790da5b937",
-    "url": "/Litvins/static/js/10.f1838ed6.chunk.js.LICENSE"
+    "url": "/Litvins/static/js/10.62c02739.chunk.js.LICENSE"
   },
   {
     "revision": "fdb46fcd30759330f1a7",
@@ -104,8 +104,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/13.0cfc30c3.chunk.js"
   },
   {
-    "revision": "6a60a16891b1e65b5292",
-    "url": "/Litvins/static/js/14.551d8bf7.chunk.js"
+    "revision": "4b4bbeb519a5eead51aa",
+    "url": "/Litvins/static/js/14.ae9a9639.chunk.js"
   },
   {
     "revision": "82f230446c505e417529",
@@ -180,8 +180,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/main.a4e67324.chunk.js"
   },
   {
-    "revision": "f96901ea04beaa341f99",
-    "url": "/Litvins/static/js/runtime-main.f0ecbfb0.js"
+    "revision": "6287ad3d28747f8e7310",
+    "url": "/Litvins/static/js/runtime-main.4cc702ac.js"
   },
   {
     "revision": "19e45b225ebfc6a445d236b6519068ce",

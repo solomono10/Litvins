@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Litvins/precache-manifest.2e48d555f759c47d9856d1fe4caeee0b.js"
+  "/Litvins/precache-manifest.95940a39c1d4442cca0ee687e2530f31.js"
 );
 
 self.addEventListener('message', (event) => {
