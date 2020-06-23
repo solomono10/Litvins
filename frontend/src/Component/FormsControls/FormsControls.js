@@ -1,9 +1,48 @@
 import styles from "../../style/InnerComponent.module.css";
 import React from "react";
 import cn from "classnames";
+import {Form} from 'antd';
 
 
-export const Input = ({input, label, type,placeholder, meta: {touched, error, warning}, ...props}) => (
+
+const FormItem = Form.Item;
+const formItemLayout = {
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 6 }
+    },
+    wrapperCol: {
+        xs: { span: 50 },
+        sm: { span: 50 }
+    }
+};
+
+export const makeField = Component => ({ input, meta, children, hasFeedback, label, ...rest }) => {
+    const hasError = meta.touched && meta.invalid;
+    return (
+        <FormItem
+            {...formItemLayout}
+            label={label}
+            validateStatus={hasError ? "error" : "success"}
+            hasFeedback={hasFeedback && hasError}
+            help={hasError && meta.error}
+        >
+            <Component
+                {...input}
+                {...rest}
+                children={children}
+                format={'DD-MM-YYYY'}
+                size={'large'}
+                className={styles.fieldComponent}
+            />
+        </FormItem>
+    );
+};
+
+
+
+
+export const renderInput = ({input, label, type,placeholder, meta: {touched, error, warning}, ...props}) => (
     <div className={styles.fieldInput}>
         <label>{label}</label>
         <div>
@@ -14,7 +53,6 @@ export const Input = ({input, label, type,placeholder, meta: {touched, error, wa
         </div>
     </div>
 )
-
 
 export const renderFieldStatistic = ({ input, label,placeholder, type, meta: { touched, error } }) => (
     <div className={styles.fieldStatistic}>

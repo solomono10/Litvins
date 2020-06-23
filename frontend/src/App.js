@@ -4,6 +4,8 @@ import Header from "./Component/MainComponent/Header";
 import Footer from "./Component/MainComponent/Footer";
 import ScrollToTop from "./Component/ScrollToTop";
 import './App.css';
+import 'antd/dist/antd.css';
+import {Loading} from "./Component/Loading";
 
 const HomePage = React.lazy(() => import('./Component/MainComponent/HomePage'));
 const Team = React.lazy(() => import('./Component/MainComponent/Team'));
@@ -25,7 +27,7 @@ export default function App() {
         <div className="App">
             <ScrollToTop/>
             <Header/>
-            <Suspense fallback={<div style={{height:'100vh',backgroundColor:'#ed1c27'}}>Загрузка...</div>}>
+            <Suspense fallback={<Loading/>} >
             <Switch>
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/team" component={Team}/>

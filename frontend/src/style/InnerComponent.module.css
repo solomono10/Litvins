@@ -91,3 +91,20 @@
     padding: 12px;
     box-sizing: border-box;
 }
+
+/*DatePicker*/
+
+.fieldComponent{
+    background: rgba(159, 27, 27, 0.05);
+    border: none;
+    /*width: 200px;*/
+    height: 44px;
+    /*height: 30px;*/
+    border-radius: 5px;
+}
+.fieldComponent:hover{
+    border-color:rgba(159, 27, 27, 0.05) ;
+}
+.fieldComponent input[name='password']{
+    background: rgba(159, 27, 27, 0.05);
+}

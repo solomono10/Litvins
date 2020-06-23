@@ -8,7 +8,7 @@
     height: 100%;
     display: grid;
     grid-template-areas: 'l f c n';
-    padding: 40px 70px 0;
+    padding: 20px 70px 0;
 
 }
 
@@ -42,18 +42,8 @@
     flex-direction: column;
     color: #ffffff;
 }
-.wrapper__footer_form span {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 26px;
-    padding-bottom: 12px;
-    text-align: left;
-}
 .wrapper__footer_form_send{
     width: 100%;
-    border: 1px solid #ffffff;
     max-height: 44px;
     display: flex;
     align-items: center;
@@ -66,9 +56,19 @@ input[type='send']{
     width: 90%;
     height: 90%;
     color: #ffffff;
+    opacity: 0.4;
+    font-family: Montserrat,sans-serif;
     box-sizing: border-box;
     font-size: 16px;
     padding: 17px 8px 18px;
+}
+input[type='send']::placeholder{
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0.4;
 }
 .wrapper__footer_form_send svg{
     font-size: 21px;
@@ -79,20 +79,23 @@ input[type='send']{
     color:#9F1B1B;
     transition: 0.5s;
 }
+.title{
+    font-family: Montserrat,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding-bottom: 16px;
+    display: inline-block;
+    text-align: left;
+    padding-left: 7px;
+}
 /*CONTACT*/
 .wrapper__footer_contact {
     grid-area: c;
     color: #ffffff;
     text-align: left;
-}
-.wrapper__footer_contact_title {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 21px;
-    line-height: 26px;
-    padding-bottom: 16px;
-    display: inline-block;
 }
 .wrapper__footer_contact_info {
     width: 235px;

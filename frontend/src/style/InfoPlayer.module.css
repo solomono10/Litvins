@@ -103,6 +103,7 @@ margin-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: -40px;
 }
 .infoPlayer div:nth-child(2n+1){
     background: #9F1B1B;
@@ -156,6 +157,8 @@ margin-bottom: 80px;
 .rating{
     width: 20%;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 .statisticTitle{
     font-family: Montserrat,sans-serif;
@@ -173,26 +176,8 @@ margin-bottom: 80px;
     flex-wrap: wrap;
 }
 .circle{
-    margin-top: 30px;
     width: 105px;
     height: 105px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius:50%;
-    background-color: #cccccc;
-    position: relative;
-
-}
-.circle:after{
-    position: absolute;
-    display: block;
-    top: 12px;
-    left: 12px;
-    content: " ";
-    border-radius: 50%;
-    background-color: whitesmoke;
-    width: 80px;
-    height: 80px;
 }
 .ratingNumber{
     font-family: Montserrat,sans-serif;
@@ -217,6 +202,7 @@ margin-bottom: 80px;
     height: 100%;
     clip: rect(0em, 0.5em, 1em, 0em);
     border-radius: 50%;
+    z-index: 999999;
 }
 .sliceFill{
     box-sizing: content-box;

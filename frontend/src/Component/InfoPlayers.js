@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getPlayer, getPlayers} from "../redux/TeamReducer";
 import {IndicatorStatistic} from "./IndicatorStatistic";
 import {ContainerInfo} from "./ContainerInfo";
+import {buildStyles, CircularProgressbar} from "react-circular-progressbar";
 
 
 
@@ -25,6 +26,7 @@ export default function InfoPlayer(props) {
     const dispatch = useDispatch();
     const player = useSelector(state => state.teamPage.player)
     const players = useSelector(state => state.teamPage.players)
+    const percentage = 50;
 
     const getInfoPlayer = useCallback(() => {
         try {
@@ -61,12 +63,12 @@ export default function InfoPlayer(props) {
                                 <img src={avatar} alt=""/>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.infoPlayer}>
-                        <ContainerInfo value={'12.01.1997'} title={'Дата рождения '}/>
-                        <ContainerInfo value={'180/72'} title={'Рост/Вес'}/>
-                        <ContainerInfo value={'122'} title={'Сыгранные матчи '}/>
-                        <ContainerInfo value={'155'} title={'Голов забито'}/>
+                        <div className={styles.infoPlayer}>
+                            <ContainerInfo value={'12.01.1997'} title={'Дата рождения '}/>
+                            <ContainerInfo value={'180/72'} title={'Рост/Вес'}/>
+                            <ContainerInfo value={'122'} title={'Сыгранные матчи '}/>
+                            <ContainerInfo value={'155'} title={'Голов забито'}/>
+                        </div>
                     </div>
                     <div className={styles.statistic}>
                         <div className={styles.statisticContainer}>
@@ -84,13 +86,23 @@ export default function InfoPlayer(props) {
                             </div>
                             <div className={styles.rating}>
                                 <span className={styles.statisticTitle}>Рейтинг</span>
-                                <div className={styles.circle}>
-                                    <span className={styles.ratingNumber}>90</span>
-                                    <div className={styles.slice}>
-                                        <div className={styles.sliceBar}></div>
-                                        <div className={styles.sliceFill}></div>
-                                    </div>
-                                </div>
+                                    <CircularProgressbar className={styles.circle} minValue={0} value={percentage} text={`${percentage}%`} styles={buildStyles({
+                                        rotation: 0,
+                                        strokeLinecap: 'round',
+                                        // Text size
+                                        textSize: '30px',
+                                        // How long animation takes to go from one percentage to another, in seconds
+                                        pathTransitionDuration: 0.5,
+                                        // Colors
+                                        pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+                                        // transformOrigin: 'center center',
+                                        transition: 'stroke-dashoffset 0.5s ease 0s',
+                                        textColor: '#f88',
+                                        trailColor: '#d6d6d6',
+                                        backgroundColor: '#3e98c7',
+                                    })}
+
+                                    />
                             </div>
                         </div>
                     </div>

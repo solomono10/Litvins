@@ -25,14 +25,14 @@ export default function Footer() {
                     {/*<span lassName={styles.wrapper__footer_logo_title}>Лицвины</span>*/}
                 </div>
                 <form action="" className={styles.wrapper__footer_form}>
-                    <span>Подписаться</span>
+                    <span className={styles.title}>Подписаться</span>
                     <div className={styles.wrapper__footer_form_send}>
-                        <input type="send" />
+                        <input type="send" placeholder='Введите ваш email'/>
                         {/*<FontAwesomeIcon icon={faChevronRight}/>*/}
                     </div>
                 </form>
                 <div className={styles.wrapper__footer_contact}>
-                    <span className={styles.wrapper__footer_contact_title}>Контакты</span>
+                    <span className={styles.title}>Контакты</span>
                     <div className={styles.wrapper__footer_contact_info}>
                         <div className={styles.contact_enquiries_phone}>
                             <FontAwesomeIcon icon={faPhoneAlt}/>

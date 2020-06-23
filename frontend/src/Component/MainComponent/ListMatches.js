@@ -18,8 +18,6 @@ export const nextMatchInfo = {
     data:'March 29, 2020 | 12.15 am',
     location:'СШ №180 Радужная 8/3'
 };
-
-
 const customStyles = {
     content: {
         width: '700px',
@@ -35,7 +33,6 @@ const customStyles = {
     }
 };
 
-
 export default function ListMatches() {
     const dispatch = useDispatch()
     const listMatches = useSelector(state => state.matchesPage.matches)
@@ -45,8 +42,7 @@ export default function ListMatches() {
         dispatch(getMatches())
     },[])
 
-    const onAddmatchBtn = () => {
-
+    const onAddMatchBtn = () => {
         setIsOpen(!modalIsOpen)
         console.log(modalIsOpen)
     }
@@ -58,7 +54,7 @@ export default function ListMatches() {
             <div className={styles.container}>
                 <div className={styles.container__content}>
                     <AsideContainer/>
-                    <div>
+                    <div className={styles.content}>
                         <div className={styles.listMatch}>
                             {
                                 listMatches.map((match)=>{
@@ -66,7 +62,7 @@ export default function ListMatches() {
                                 })
                             }
                         </div>
-                        <button onClick={onAddmatchBtn} className={styles.addMatch}>Add match</button>
+                        <button onClick={onAddMatchBtn} className={styles.addMatch}>Add match</button>
                     </div>
                     <div>
                         <Modal isOpen={modalIsOpen}
@@ -74,7 +70,7 @@ export default function ListMatches() {
                                ariaHideApp={false}
                                contentLabel="Example Modal"
                                className={styles.modal}>
-                            <button className={styles.modal_CloseButton} onClick={onAddmatchBtn}>X</button>
+                            <button className={styles.modal_CloseButton} onClick={onAddMatchBtn}>X</button>
                         </Modal>
                     </div>
                 </div>

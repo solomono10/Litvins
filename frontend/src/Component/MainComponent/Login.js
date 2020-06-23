@@ -5,14 +5,14 @@ import {useDispatch} from "react-redux";
 import {logIn} from "../../redux/AuthReducer";
 import {NavLink} from "react-router-dom";
 import {email, required} from "../FormsControls/validation";
-import {Input} from "../FormsControls/FormsControls";
+import {renderInput} from "../FormsControls/FormsControls";
 
 
 const LoginForm = (props) => {
     return (
         <form action="" className={styles.form} onSubmit={props.handleSubmit}>
-            <Field name='email' component={Input} placeholder='ivaninanov@mail.ru' type='text' label='Почта' validate={[required, email]}/>
-            <Field name='password' component={Input}  placeholder='Введите пароль' type='password' label='Пароль' validate={[required]}/>
+            <Field name='email' component={renderInput} placeholder='ivaninanov@mail.ru' type='text' label='Почта' validate={[required, email]}/>
+            <Field name='password' component={renderInput}  placeholder='Введите пароль' type='password' label='Пароль' validate={[required]}/>
             <button type={"submit"} className={styles.button}>Войти</button>
         </form>
     )

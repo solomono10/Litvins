@@ -1,16 +1,21 @@
 import React from "react";
 import styles from './../../style/Registration.module.css'
-import {Field, FieldArray, FormSection, reduxForm} from "redux-form";
+import {Field, FormSection, reduxForm} from "redux-form";
 import {useDispatch, useSelector} from "react-redux";
 import {registration} from "../../redux/AuthReducer";
-import {Input} from "../FormsControls/FormsControls";
+import {makeField, renderInput} from "../FormsControls/FormsControls";
 import {required} from "../FormsControls/validation";
 import {Redirect} from "react-router-dom";
-import {Birthday, InfoAbout, Name, Statistic} from "../FormsControls/FormsComponent";
+import {InfoAbout, Name, Statistic} from "../FormsControls/FormsComponent";
+import {DatePicker,Input,Space} from "antd";
+// import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import moment from 'moment';
 
-const RegistrationForm = (props) => {
+export const ARangePicker = makeField(DatePicker);
+
+const RegistrationForm = ({handleSubmit}) => {
     return (
-        <form action="" className={styles.form} onSubmit={props.handleSubmit}>
+        <form action="" className={styles.form} onSubmit={handleSubmit}>
             <FormSection name={'name'}>
                 <div className={styles.name}>
                     <Name/>
@@ -18,8 +23,16 @@ const RegistrationForm = (props) => {
             </FormSection>
             <FormSection name={'birthday'}>
                 <div className={styles.birthday}>
-                    <span>Дата рождения</span>
-                    <Birthday/>
+                    <span className={styles.birthdayTitle}>Дата рождения</span>
+                    <Field
+                        name="birthdayDay"
+                        component={ARangePicker}
+                        placeholder={'You birthday'}
+                        hasFeedback
+                        validate={[required]}
+                        onFocus={e => e.preventDefault()}
+                        onBlur={e => e.preventDefault()}
+                    />
                 </div>
             </FormSection>
             <FormSection name={'infoAbout'}>
@@ -30,21 +43,23 @@ const RegistrationForm = (props) => {
             <FormSection name={'infoStatistic'}>
                 <Statistic/>
             </FormSection>
-
-            {/*<FormSection name={'statistic'}>*/}
-            {/*    <div className={styles.statistic}>*/}
-            {/*       <Statistic/>*/}
-            {/*    </div>*/}
-            {/*</FormSection>*/}
-
             <FormSection name={'personalData'}>
                 <div className={styles.personalData}>
-                    <Field name='email' type='text' component={Input} label='Почта' placeholder='ivaninanov@mail.ru'
+                    <Field name='email' type='text' component={renderInput} label='Почта' placeholder='ivaninanov@mail.ru'
                            validate={[required]}/>
-                    <Field name='password' type='password' component={Input} label='Пароль'
-                           placeholder='Придумайте пароль' validate={[required]}/>
-                    <Field name='repeatPassword' type='password' component={Input} label='Подтверждение пароля'
-                           placeholder='Подтверждение пароля' validate={[required]}/>
+
+                    <Input.Password
+                        placeholder="Придумайте пароль"
+                        name='password' label='Пароль'
+                        validate={[required]}
+                        className={styles.fieldPassword}/>
+                    <Input.Password
+                        placeholder="Подтверждение пароля"
+                        name='repeatPassword'
+                        label='Подтверждение пароля'
+                        validate={[required]}
+                        className={styles.fieldPassword}
+                    />
                 </div>
             </FormSection>
             <div className={styles.btn}>
@@ -59,15 +74,18 @@ const RegistrationReduxForm = reduxForm({
 
 export default function Registration() {
     // const player = useSelector(state => state.authPage.playerId)
-    const isAuth = useSelector(state => state.authPage.isAuth)
+    const isAuth = useSelector(state => state.authPage.isAuth)//true or false
     const dispatch = useDispatch()
     const onSubmit = (formData) => {
-        console.log(formData)
+        // console.log(formData)
+        console.log(moment(formData.birthday.birthdayDay._d).format('MM/DD/YYYY'))
         // dispatch(registration(formData))
     }
+
     if (isAuth) {
         return <Redirect to={"/"}/>;
     }
+
     return (
         <div className={styles.wrap}>
             <div className={styles.container}>
