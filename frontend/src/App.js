@@ -9,7 +9,7 @@ import {Loading} from "./Component/Loading";
 
 const HomePage = React.lazy(() => import('./Component/MainComponent/HomePage'));
 const Team = React.lazy(() => import('./Component/MainComponent/Team'));
-const InfoPlayer = React.lazy(() => import('./Component/InfoPlayers'));
+const InfoPlayer = React.lazy(() => import('./Component/MainComponent/InfoPlayers'));
 const ListMatches = React.lazy(() => import('./Component/MainComponent/ListMatches'));
 const Match = React.lazy(() => import('./Component/MainComponent/Match'));
 const Club = React.lazy(() => import('./Component/MainComponent/Club'));

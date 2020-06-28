@@ -4,7 +4,11 @@
 .wrap {
     margin-top: 20px;
 }
-
+.btn span{
+    font-size: 36px;
+    border-radius: 50%;
+    background: rgba(182, 31, 31, 0.2);
+}
 
 @media screen and (max-width: 1100px) {
     .btn {

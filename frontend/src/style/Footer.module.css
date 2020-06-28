@@ -109,7 +109,7 @@ input[type='send']::placeholder{
     line-height: 20px;
 }
 .contact_enquiries_phone svg, .contact_enquiries_mail svg, .contact_enquiries_location svg {
-    font-size: 19px;
+    font-size: 30px;
     color: #9F1B1B;
     padding: 0 5px;
 }
