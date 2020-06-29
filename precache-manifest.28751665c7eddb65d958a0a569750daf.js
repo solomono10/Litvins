@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9080a0b322c87afcca24eb35d8e7e905",
+    "revision": "7bd3cf7857c45ab3f33afa9c805f4414",
     "url": "/Litvins/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/css/11.27f416fa.chunk.css"
   },
   {
-    "revision": "4ca2b6a2b113dd0ff719",
-    "url": "/Litvins/static/css/12.9081598f.chunk.css"
+    "revision": "8c5995ecf2b68a56d63b",
+    "url": "/Litvins/static/css/12.91f7b611.chunk.css"
   },
   {
     "revision": "8337f745ec71028a4a43",
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/css/16.4f358ed0.chunk.css"
   },
   {
-    "revision": "0c5833c01c60ebcf3326",
-    "url": "/Litvins/static/css/17.33e23793.chunk.css"
+    "revision": "5a25b6f42fd28a77db6b",
+    "url": "/Litvins/static/css/17.d791be97.chunk.css"
   },
   {
     "revision": "67fd756b2b7c7168f4c0",
@@ -100,7 +100,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/11.3d6e63e7.chunk.js.LICENSE"
   },
   {
-    "revision": "4ca2b6a2b113dd0ff719",
+    "revision": "8c5995ecf2b68a56d63b",
     "url": "/Litvins/static/js/12.f5a35e46.chunk.js"
   },
   {
@@ -132,7 +132,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/16.adc4276d.chunk.js"
   },
   {
-    "revision": "0c5833c01c60ebcf3326",
+    "revision": "5a25b6f42fd28a77db6b",
     "url": "/Litvins/static/js/17.715355d0.chunk.js"
   },
   {
@@ -200,8 +200,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Litvins/static/js/main.af5c41ee.chunk.js"
   },
   {
-    "revision": "5fe803f0d137aa552326",
-    "url": "/Litvins/static/js/runtime-main.4dd27eb2.js"
+    "revision": "790ab39799e8f212136d",
+    "url": "/Litvins/static/js/runtime-main.f5e2e163.js"
   },
   {
     "revision": "19e45b225ebfc6a445d236b6519068ce",
