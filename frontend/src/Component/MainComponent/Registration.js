@@ -7,7 +7,7 @@ import {makeField, renderInput} from "../FormsControls/FormsControls";
 import {required} from "../FormsControls/validation";
 import {Redirect} from "react-router-dom";
 import {InfoAbout, Name, Statistic} from "../FormsControls/FormsComponent";
-import {DatePicker,Input,Space} from "antd";
+import {DatePicker, Input, Space} from "antd";
 // import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import moment from 'moment';
 
@@ -28,6 +28,7 @@ const RegistrationForm = ({handleSubmit}) => {
                         name="birthdayDay"
                         component={ARangePicker}
                         placeholder={'You birthday'}
+                        format={'DD-MM-YYYY'}
                         hasFeedback
                         validate={[required]}
                         onFocus={e => e.preventDefault()}

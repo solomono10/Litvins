@@ -27,6 +27,9 @@ export const matchesApi ={
     getMatch(matchId){
         return instance.get(`list-matches/match/`+ matchId)
             .then(res => res.data)
+    },
+    addMatch(matchInfo){
+        return instance.post(`list-matches/match/`, {matchInfo})
     }
 }
 export const homeApi={

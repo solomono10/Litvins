@@ -1,7 +1,7 @@
 import styles from "../../style/InnerComponent.module.css";
 import React from "react";
 import cn from "classnames";
-import {Form} from 'antd';
+import {DatePicker, Form,TimePicker,Checkbox} from 'antd';
 
 
 
@@ -17,6 +17,8 @@ const formItemLayout = {
     }
 };
 
+
+
 export const makeField = Component => ({ input, meta, children, hasFeedback, label, ...rest }) => {
     const hasError = meta.touched && meta.invalid;
     return (
@@ -31,7 +33,7 @@ export const makeField = Component => ({ input, meta, children, hasFeedback, lab
                 {...input}
                 {...rest}
                 children={children}
-                format={'DD-MM-YYYY'}
+                format={rest.defaultValue?'HH:mm':'DD-MM-YYYY'}
                 size={'large'}
                 className={styles.fieldComponent}
             />
@@ -39,14 +41,15 @@ export const makeField = Component => ({ input, meta, children, hasFeedback, lab
     );
 };
 
+export const ADatePicker = makeField(TimePicker);
+export const ACheckbox = makeField(Checkbox);
 
 
-
-export const renderInput = ({input, label, type,placeholder, meta: {touched, error, warning}, ...props}) => (
+export const renderInput = ({input, label, type,placeholder,defaultValue, meta: {touched, error, warning}, ...props}) => (
     <div className={styles.fieldInput}>
         <label>{label}</label>
         <div>
-            <input {...input} placeholder={placeholder} type={type} {...props}  className={cn({[styles.inputError]:touched},styles.input)}/>
+            <input {...input} placeholder={placeholder} value={defaultValue} type={type} {...props}  className={cn({[styles.inputError]:touched},styles.input)}/>
             {touched &&
             ((error && <span className={styles.error}>{error}</span>) ||
                 (warning && <span className={styles.warning}>{warning}</span>))}

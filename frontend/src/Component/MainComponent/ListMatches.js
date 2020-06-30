@@ -8,6 +8,7 @@ import InfoMatch from "../InfoMatch";
 import {getMatches} from "../../redux/MatchsReducer";
 import {useDispatch, useSelector} from "react-redux";
 import Modal from "react-modal";
+import AddNewMatch from "../AddNewMatch";
 
 
 
@@ -70,7 +71,7 @@ export default function ListMatches() {
                                ariaHideApp={false}
                                contentLabel="Example Modal"
                                className={styles.modal}>
-                            <button className={styles.modal_CloseButton} onClick={onAddMatchBtn}>X</button>
+                            <AddNewMatch onAddMatchBtn={onAddMatchBtn}/>
                         </Modal>
                     </div>
                 </div>

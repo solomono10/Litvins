@@ -2,6 +2,7 @@ import {matchesApi} from "../api/api";
 
 export const SET_MATCHES = 'RECENTCOMMENTS::SET_MATCHES'
 export const SET_MATCH = 'RECENTCOMMENTS::SET_MATCH'
+export const ADD_MATCH = 'RECENTCOMMENTS::ADD_MATCH'
 
 const initState = {
     matches: [],
@@ -41,6 +42,12 @@ export const setMatch = (match) =>{
         match
     }
 }
+export const addMatch = (matchInfo) =>{
+    return {
+        type:ADD_MATCH,
+        matchInfo
+    }
+}
 
 export const getMatches = () => async (dispatch) => {
     const data = await matchesApi.getMatches()
@@ -49,6 +56,11 @@ export const getMatches = () => async (dispatch) => {
 export const getMatch = (matchId) => async (dispatch) =>{
     const data = await matchesApi.getMatch(matchId)
     dispatch(setMatch(data))
+}
+export const AddMatch = (matchInfo) => async (dispatch) =>{
+    const data = await matchesApi.addMatch(matchInfo)
+    console.log()
+    // dispatch(addMatch(data))
 }
 
 export default MatchesReducer

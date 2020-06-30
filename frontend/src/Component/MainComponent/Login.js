@@ -20,6 +20,7 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({
     form: 'Login',
 })(LoginForm);
+
 export default function Login() {
     const dispatch = useDispatch()
     const onSubmit = (formData) => {
