@@ -95,7 +95,7 @@
 /*DatePicker*/
 
 .fieldComponent{
-    background: rgba(159, 27, 27, 0.05);
+    /*background: rgba(159, 27, 27, 0.05);*/
     border: none;
     /*width: 200px;*/
     height: 44px;
@@ -107,4 +107,10 @@
 }
 .fieldComponent input[name='password']{
     background: rgba(159, 27, 27, 0.05);
+}
+.fieldComponent input[type=checkbox]{
+  
+}
+.fieldComponent input[name='matchDate']{
+
 }

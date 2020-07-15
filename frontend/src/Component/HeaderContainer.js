@@ -4,15 +4,20 @@ import {NavLink} from "react-router-dom";
 import TimeInfoForNextMatch from "./TimeInfoForNextMatch";
 import cn from 'classnames'
 
-export default function HeaderContainer({title, activeLink, link, childrenLink = null, extraInfo,header}) {
+export default function HeaderContainer({teams={}, game, activeLink, link, childrenLink = null, extraInfo, header,dateTime}) {
     return (
         <div className={styles.headerContainer}>
-            <div className={cn({[styles.header]:!extraInfo},styles.headerContainer__title)}>
-                <h1>{title}</h1>
+            <div className={cn({[styles.header]: !extraInfo}, styles.headerContainer__title)}>
+                {game === 'home' ?
+                    <h1>
+                        <span>{teams[0]} </span>
+                        <span>{teams[1]}</span>
+                    </h1>
+                    : <h1>{teams[1]} {teams[0]}</h1>}
             </div>
             {extraInfo ?
                 <div className={styles.headerContainer__extraInfo}>
-                    <TimeInfoForNextMatch header={header} nextMatch={extraInfo}/>
+                    <TimeInfoForNextMatch header={header} nextMatch={extraInfo} dateTime={dateTime} />
                 </div>
                 : null}
             <div className={styles.breadcrumb}>

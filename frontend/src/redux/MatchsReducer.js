@@ -6,7 +6,8 @@ export const ADD_MATCH = 'RECENTCOMMENTS::ADD_MATCH'
 
 const initState = {
     matches: [],
-    match:{}
+    match:{},
+    message: ''
 }
 
 const MatchesReducer = (state=initState, action) => {
@@ -21,6 +22,12 @@ const MatchesReducer = (state=initState, action) => {
             return{
                 ...state,
                 match: action.match
+            }
+        }
+        case ADD_MATCH: {
+            return{
+                ...state,
+                message: action.data
             }
         }
         default:
@@ -42,16 +49,17 @@ export const setMatch = (match) =>{
         match
     }
 }
-export const addMatch = (matchInfo) =>{
+export const addMatch = (data) =>{
     return {
         type:ADD_MATCH,
-        matchInfo
+        data
     }
 }
 
 export const getMatches = () => async (dispatch) => {
     const data = await matchesApi.getMatches()
     dispatch(setMatches(data))
+
 }
 export const getMatch = (matchId) => async (dispatch) =>{
     const data = await matchesApi.getMatch(matchId)
@@ -59,8 +67,8 @@ export const getMatch = (matchId) => async (dispatch) =>{
 }
 export const AddMatch = (matchInfo) => async (dispatch) =>{
     const data = await matchesApi.addMatch(matchInfo)
-    console.log()
-    // dispatch(addMatch(data))
+    dispatch(addMatch(data))
+    dispatch(getMatches())
 }
 
 export default MatchesReducer

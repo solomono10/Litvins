@@ -4,11 +4,12 @@
     background-color: #302E35;
 }
 .wrapper__footer {
-    width: 90%;
+    width: 75%;
     height: 100%;
+    margin: auto;
     display: grid;
     grid-template-areas: 'l f c n';
-    padding: 20px 70px 0;
+    padding: 20px 0 0;
 
 }
 
@@ -130,7 +131,7 @@ input[type='send']::placeholder{
     grid-area: n;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: right;
 }
 .wrapper__footer__footMenu a {
     font-family: Montserrat, sans-serif;

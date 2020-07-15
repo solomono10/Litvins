@@ -30,6 +30,7 @@ export const matchesApi ={
     },
     addMatch(matchInfo){
         return instance.post(`list-matches/match/`, {matchInfo})
+            .then(res => res.data)
     }
 }
 export const homeApi={

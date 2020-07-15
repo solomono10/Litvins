@@ -3,6 +3,7 @@
     "start": "concurrently  \"(npm start --prefix backend)\" \"(npm start  --prefix frontend)\""
   },
   "dependencies": {
+    "moment": "^2.27.0",
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {

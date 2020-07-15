@@ -14,7 +14,6 @@ router.post('/', async (req, res, next) => {
         const found = await Player.exists({ email });
 
         if (found) {
-            debugger
            return res.status(400).json({ message: 'Такой пользователь уже существует' })
         }
         //create hashedPassword

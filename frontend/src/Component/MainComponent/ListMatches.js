@@ -9,7 +9,7 @@ import {getMatches} from "../../redux/MatchsReducer";
 import {useDispatch, useSelector} from "react-redux";
 import Modal from "react-modal";
 import AddNewMatch from "../AddNewMatch";
-
+import {message, Space} from 'antd';
 
 
 export const nextMatchInfo = {
@@ -43,14 +43,17 @@ export default function ListMatches() {
         dispatch(getMatches())
     },[])
 
+
     const onAddMatchBtn = () => {
         setIsOpen(!modalIsOpen)
-        console.log(modalIsOpen)
     }
+    const success = () => {
+        message.success("Матч добавлен");
+    };
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
-                <HeaderContainer  title={'MATCH LIST'} activeLink={'Список матчей'} extraInfo={nextMatchInfo} header={true}/>
+                {/*<HeaderContainer  title={'MATCH LIST'} activeLink={'Список матчей'} extraInfo={nextMatchInfo} header={true}/>*/}
             </div>
             <div className={styles.container}>
                 <div className={styles.container__content}>
@@ -59,7 +62,7 @@ export default function ListMatches() {
                         <div className={styles.listMatch}>
                             {
                                 listMatches.map((match)=>{
-                                    return <InfoMatch match={match} key={match.id}/>
+                                    return <InfoMatch match={match} key={match._id}/>
                                 })
                             }
                         </div>
@@ -71,7 +74,7 @@ export default function ListMatches() {
                                ariaHideApp={false}
                                contentLabel="Example Modal"
                                className={styles.modal}>
-                            <AddNewMatch onAddMatchBtn={onAddMatchBtn}/>
+                            <AddNewMatch onAddMatchBtn={onAddMatchBtn} success={success}/>
                         </Modal>
                     </div>
                 </div>

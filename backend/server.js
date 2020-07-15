@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
 
 app.use('/', cors({origin: 'http://localhost:3000'}), require('./routes/home.routes'));
 app.use('/team', cors({origin: 'http://localhost:3000'}), require('./routes/team.routes'));
-app.use('/list-matches', cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
+app.use('/list-matches',urlencodedParser, cors({origin: 'http://localhost:3000'}), require('./routes/listMatches.routes'));
 app.use('/club', cors({origin: 'http://localhost:3000'}), require('./routes/club.routes'));
 app.use('/list-news', cors({origin: 'http://localhost:3000'}), require('./routes/listNews.routes'));
 app.use('/contact', cors({origin: 'http://localhost:3000'}), require('./routes/contact.routes'));

@@ -13,19 +13,21 @@ export default function Match(props) {
     const dispatch = useDispatch();
     const match = useSelector(state => state.matchesPage.match)
     useEffect(() => {
-        dispatch(getMatch(parseInt(props.match.params.matchId)))
+        dispatch(getMatch((props.match.params.matchId)))
     },[])
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
                 <HeaderContainer
-                    title={'ENGLAND VS AMSTERDAM'}
+                    teams={[match.team,match.opposingTeam]}
+                    game={match.game}
                     extraInfo={true}
                     activeLink={'Matches List'}
                     header={true}
                     link={'list-matches'}
-                    childrenLink={'ENGLAND VS AMSTERDAM'}/>
+                    childrenLink={'ENGLAND VS AMSTERDAM'}
+                    dateTime={match.dateTime}
+                />
             </div>
             <div className={styles.container}>
                 <div className={styles.container_content}>

@@ -24,16 +24,16 @@ const RegistrationForm = ({handleSubmit}) => {
             <FormSection name={'birthday'}>
                 <div className={styles.birthday}>
                     <span className={styles.birthdayTitle}>Дата рождения</span>
-                    <Field
-                        name="birthdayDay"
-                        component={ARangePicker}
-                        placeholder={'You birthday'}
-                        format={'DD-MM-YYYY'}
-                        hasFeedback
-                        validate={[required]}
-                        onFocus={e => e.preventDefault()}
-                        onBlur={e => e.preventDefault()}
-                    />
+                    {/*<Field*/}
+                    {/*    name="birthdayDay"*/}
+                    {/*    component={ARangePicker}*/}
+                    {/*    placeholder={'You birthday'}*/}
+                    {/*    format={'DD-MM-YYYY'}*/}
+                    {/*    hasFeedback*/}
+                    {/*    validate={[required]}*/}
+                    {/*    onFocus={e => e.preventDefault()}*/}
+                    {/*    onBlur={e => e.preventDefault()}*/}
+                    {/*/>*/}
                 </div>
             </FormSection>
             <FormSection name={'infoAbout'}>
